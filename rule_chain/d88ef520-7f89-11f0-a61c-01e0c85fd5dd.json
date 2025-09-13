@@ -1,0 +1,585 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "95a95081-8f37-11f0-a61c-01e0c85fd5dd"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "d88ef520-7f89-11f0-a61c-01e0c85fd5dd"
+    },
+    "name" : "Preprocess",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 10,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 11,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 0,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 1,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 49,
+        "layoutY" : 478
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "bit" : "statusControllerMode",
+          "tot_gen_pow" : "generatorP",
+          "gen_act_pow_1" : "generatorPL1",
+          "gen_act_pow_2" : "generatorPL2",
+          "gen_act_pow_3" : "generatorPL3",
+          "tot_gen_rea_p" : "generatorQ",
+          "tot_gen_app_p" : "generatorS",
+          "gen_pow_fac" : "generatorPowerFactor",
+          "gen_fre" : "generatorFrequency",
+          "gen_vol_l1-_1" : "generatorVoltageL1N",
+          "gen_vol_l2-_1" : "generatorVoltageL2N",
+          "gen_vol_l3-_1" : "generatorVoltageL3N",
+          "gen_vol_l1-" : "generatorVoltageL1L2",
+          "gen_vol_l2-" : "generatorVoltageL2L3",
+          "gen_vol_l3-" : "generatorVoltageL3L1",
+          "gen_cur1" : "generatorCurrentL1",
+          "gen_cur2" : "generatorCurrentL2",
+          "gen_cur3" : "generatorCurrentL3",
+          "gen_rea_ene" : "generatorGensetKWh",
+          "gen_pos_rea_e" : "generatorGensetKVArh",
+          "av._gen_cur" : "generatorCurrentAvg",
+          "av._gen_wye" : "generatorVoltageAvgLN",
+          "av._gen_del" : "generatorVoltageAvgLL",
+          "mea_gro_cur" : "generatorGroundCurrentMeasured",
+          "cal_gro_cur" : "generatorGroundCurrentCalculated",
+          "ska_pow_16_bi" : "scalingPower",
+          "ska_vol_16_bi" : "scalingVolts",
+          "ska_amp_16_bi" : "scalingAmps",
+          "set_fre" : "generatorSetpointFrequency",
+          "set_pow_fac_c" : "generatorSetpointPowerFactor"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "95a95080-8f37-11f0-a61c-01e0c85fd5dd"
+      },
+      "name" : "Remap Names",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 269,
+        "layoutY" : 149
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var modes = {\n  1: 'AUTO',\n  2: 'STOP',\n  4: 'MANUAL',\n  8: 'TEST'\n};\n\nif (msg.bit) {\n    msg.bit = modes[msg.bit] || '';\n}\n\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "const modes = {\n  1: 'AUTO',\n  2: 'STOP',\n  4: 'MANUAL',\n  8: 'TEST'\n};\n\nmsg.statusControllerMode = modes[msg.statusControllerMode] || '';\n\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1757628086720,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "95a95081-8f37-11f0-a61c-01e0c85fd5dd"
+      },
+      "name" : "Convert some values",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1310,
+        "layoutY" : 482
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "95a97790-8f37-11f0-a61c-01e0c85fd5dd"
+      },
+      "name" : "Output",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1492,
+        "layoutY" : 402
+      },
+      "configuration" : {
+        "processingSettings" : {
+          "type" : "ON_EVERY_MESSAGE"
+        },
+        "scope" : "SHARED_SCOPE",
+        "notifyDevice" : false,
+        "sendAttributesUpdatedNotification" : false,
+        "updateAttributesOnlyOnValueChange" : false
+      },
+      "configurationVersion" : 3,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "405c80b0-8f38-11f0-a61c-01e0c85fd5dd"
+      },
+      "name" : "Save as atrributes",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1251,
+        "layoutY" : 399
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "newMsg = {};\n\nnewMsg.statusControllerMode = msg.statusControllerMode;\n\nreturn {msg: newMsg, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST'};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7ceca730-8f38-11f0-a61c-01e0c85fd5dd"
+      },
+      "name" : "Filter data for attributes",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 953,
+        "layoutY" : 478
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "eng_spe_sp190" : "engineRPM",
+          "bat_vol" : "engineBatteryVolts",
+          "ai_aux_exc_d+" : "engineDPlus",
+          "eng_oil_pr100" : "engineOilPressure",
+          "eng_coo_te110" : "engineCoolantTemp",
+          "fue_rat_sp183" : "engineFuelLevel",
+          "tot_eng_hou_j" : "engineRunningHours",
+          "eng_num_of_st" : "engineNumStarts",
+          "hou_unt_nex_m" : "engineMaintenanceTimer1RunHours",
+          "day_unt_nex_m" : "engineDaysUntilMaintenance",
+          "fue_tem_sp174" : "engineFuelTemperature",
+          "eng_oil_te175" : "engineOilTemperature",
+          "coo_lev_sp111" : "engineCoolantLevel",
+          "thr_pos_spn91" : "engineThrotlePosition",
+          "loa_at_cur_92" : "engineLoadAtCurrentSpeed",
+          "eng_oil_lev98" : "engineOilLevel",
+          "boo_pre_sp102" : "engineBoostPressure",
+          "int_man_1_105" : "engineIntakeMainfold1Temp",
+          "bar_pre_sp108" : "engineBarometricPressure",
+          "air_inl_te172" : "engineAirInletTemperature",
+          "act_eng_to513" : "engineActualTorque",
+          "exh_gas_te173" : "engineExhaustGasTemp",
+          "eng_int_tem_s" : "engineIntercoolerTemp",
+          "fue_del_pre_s" : "engineFuelDeliveryPressure",
+          "fue_fil_dif_p" : "engineFuelFilterDifferentialPressure",
+          "cra_pre_spn" : "engineCrakcasePressure",
+          "tur_air_inl_p" : "engineTurboAirInletPressure",
+          "air_fil_1_dif" : "engineAirFilter1DifferentialPressure",
+          "coo_pre_spn" : "engineCoolantPressure",
+          "tra_oil_pre_s" : "engineTransmissionOilPressure",
+          "fue_rai_pre_s" : "engineFuelRailPressure",
+          "amb_air_tem_s" : "engineAmbientAirTemperature",
+          "tur_oil_tem_s" : "engineTurboOilTemperature",
+          "tra_oil_tem_s" : "engineTransmissionOilTemperature",
+          "aux_tem_1_spn" : "engineAuxiliaryTemperature1",
+          "aux_tem_2_spn" : "engineAuxiliaryTemperature2",
+          "eng_aux_coo_p" : "engineAuxCoolantPressure",
+          "pre_oil_pre_s" : "enginePreFilterOilPressure",
+          "eng_aux_coo_t" : "engineAuxCoolantTemperature",
+          "fu_fi_di_p_1" : "engineFuelFilterDifferentialPressure",
+          "int_man_5_tem" : "engineIntakeManifoldTemperature5",
+          "int_man_6_tem" : "engineIntakeManifoldTemperature6",
+          "rig_exh_gas_t" : "engineExhaustGasTemperatureRight",
+          "lef_exh_gas_t" : "engineExhaustGasTemperatureLeft",
+          "tur_1_com_out" : "turboCompressorOutletTemperature1",
+          "eng_der_req_s" : "engineDerateRequest",
+          "exh_gas_t4151" : "engineExhaustGasTemperatureAverage",
+          "exh_gas_t4153" : "engineExhaustGasTemperatureBank1",
+          "exh_gas_t4152" : "engineExhaustGasTemperatureBank2",
+          "tot_gen_pow_1" : "generatorTotalPower ",
+          "to_ge_re_p_1" : "generatorTotalReactivePower"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0a274620-8f5a-11f0-a61c-01e0c85fd5dd"
+      },
+      "name" : "Remap Names",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 627,
+        "layoutY" : 476
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "rea_pow_in_sy" : "loadP",
+          "res_rea_pow_i" : "loadActualReserve",
+          "nom_rea_pow_i" : "loadNominalP",
+          "act_pow_lsx" : "loadPBySegment",
+          "rea_pow_lsx" : "loadQBySegment"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4f80f1e0-901c-11f0-a61c-01e0c85fd5dd"
+      },
+      "name" : "Remap Names",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 352,
+        "layoutY" : 472
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "mai_fre" : "mainsFrequency",
+          "mai_vol_l1-_1" : "mainsVoltageL1N",
+          "mai_vol_l2-_1" : "mainsVoltageL2N",
+          "mai_vol_l3-_1" : "mainsVoltageL3N",
+          "mai_vol_l1-" : "mainsVoltageL1L2",
+          "mai_vol_l2-" : "mainsVoltageL2L3",
+          "mai_vol_l3-" : "mainsVoltageL3L1",
+          "mai_cur_l1" : "mainsL1Current",
+          "tot_mai_pow" : "mainsImportP",
+          "tot_mai_rea_p" : "mainsImportQ",
+          "mai_pow_fac" : "mainsPowerFactor",
+          "av._mai_wye" : "mainsVoltageAvgLN",
+          "av._mai_del" : "mainsVoltageAvgLL",
+          "av._mai_cur" : "mainsCurrentAvg",
+          "ave_lsx_del_m" : "mainsVoltageLSxDeltaLL",
+          "ave_lsx_wye_m" : "mainsVoltageLSxWyeLN",
+          "ave_lsx_mai_d" : "mainsFrequencyLSxDeltaLL"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "ce89d970-901c-11f0-a61c-01e0c85fd5dd"
+      },
+      "name" : "Remap Names",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 75,
+        "layoutY" : 274
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "gen_kw" : "generatorP",
+          "gen_kw_l1" : "generatorPL1",
+          "gen_kw_l2" : "generatorPL2",
+          "gen_kw_l3" : "generatorPL3",
+          "gen_kva" : "generatorQ",
+          "gen_kva_l1" : "generatorQL1",
+          "gen_kva_l2" : "generatorQL2",
+          "gen_kva_l3" : "generatorQL3",
+          "gen_kva_1" : "generatorS",
+          "gen_kva_l1_1" : "generatorSL1",
+          "gen_kva_l2_1" : "generatorSL2",
+          "gen_kva_l3_1" : "generatorSL3",
+          "gen_pow_fac" : "generatorPowerFactor",
+          "gen_pow_fa_l1" : "generatorPowerFactorL1",
+          "gen_pow_fa_l2" : "generatorPowerFactorL2",
+          "gen_pow_fa_l3" : "generatorPowerFactorL3",
+          "gen_fre" : "generatorFrequency",
+          "gen_vol_l1-n" : "generatorVoltageL1N",
+          "gen_vol_l2-n" : "generatorVoltageL2N",
+          "gen_vol_l3-n" : "generatorVoltageL1N",
+          "gen_vol_l1-l2" : "generatorVoltageL1L2",
+          "gen_vol_l2-l3" : "generatorVoltageL2L3",
+          "gen_vol_l3-l1" : "generatorVoltageL3L1",
+          "gen_cur_l1" : "generatorCurrentL1",
+          "gen_cur_l2" : "generatorCurrentL2",
+          "gen_cur_l3" : "generatorCurrentL3",
+          "ear_fau_cur" : "generatorEarthFaultCurrent",
+          "gen_kwh_kwh" : "generatorGensetKWh",
+          "gen_kva_kva" : "generatorGensetKVArh"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "66145f50-902b-11f0-a61c-01e0c85fd5dd"
+      },
+      "name" : "Remap Names",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 304,
+        "layoutY" : 271
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "mai_bus_fre" : "mainsFrequency",
+          "mai_bus_l1-n" : "mainsVoltageL1N",
+          "mai_bus_l2-n" : "mainsVoltageL2N",
+          "mai_bus_l3-n" : "mainsVoltageL3N",
+          "mai_bus_l1-l2" : "mainsVoltageL1L2",
+          "mai_bus_l2-l3" : "mainsVoltageL2L3",
+          "mai_bus_l3-l1" : "mainsVoltageL3L1",
+          "mai_cur_l1" : "mainsL1Current",
+          "mai_imp_kw" : "mainsImportP",
+          "mai_imp_kva" : "mainsImportQ",
+          "mai_pf" : "mainsPowerFactor",
+          "mai_kwh_kwh" : "mainsVoltageAvgLN",
+          "mai_kva_kva" : "mainsVoltageAvgLL"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "66148660-902b-11f0-a61c-01e0c85fd5dd"
+      },
+      "name" : "Remap Names",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 537,
+        "layoutY" : 267
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "act_res" : "loadActualReserve",
+          "sta_res" : "loadStartReserve",
+          "sto_res" : "loadStopReserve",
+          "run_nom_pow_i" : "loadRunningNominalPowerInPM",
+          "run_nom_pow_o" : "loadRunningNominalPowerOfAll",
+          "run_nom_pow_o ava_nom_pow" : "loadAvailableNominalPowerInPM",
+          "dpf_soo_loa" : "loadDPF1Soot",
+          "dpf_ash_loa" : "loadDPF1Ash",
+          "def_lev" : "loadDEFLevel",
+          "dpf" : "loadDPFStatus"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "66148661-902b-11f0-a61c-01e0c85fd5dd"
+      },
+      "name" : "Remap Names",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 763,
+        "layoutY" : 272
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "rpm" : "engineRPM",
+          "bat_vol" : "engineBatteryVolts",
+          "d" : "engineDPlus",
+          "run_hou" : "engineRunningHours",
+          "num_sta" : "engineNumStarts",
+          "mai_1" : "engineMaintenanceTimer1RunHours",
+          "mai_2" : "engineMaintenanceTimer2RunHours",
+          "mai_3" : "engineMaintenanceTimer3RunHours",
+          "ren_1" : "engineRental1",
+          "ren_2" : "engineRental2",
+          "num_est" : "engineNumEStops",
+          "shu" : "engineShutdowns",
+          "tot_fue_con_l" : "engineTotalFuelConsumption",
+          "tim_til_emp" : "engineTimeTillEmpty",
+          "tim_til_emp_h" : "engineTimeTillEmptyHrs",
+          "tim_til_emp_m" : "engineTimeTillEmptyMin",
+          "act_pow_req" : "engineRequiredP",
+          "spe_reg_out" : "engineSpeedRegulatorOutput",
+          "spe_req" : "engineSpeedRequest",
+          "req_rpm" : "engineRequestedRPM",
+          "rea_pow_req" : "engineRequiredQ",
+          "vol_reg_out" : "engineVoltageRegulatorOutput",
+          "vol_req" : "engineVoltageRequest",
+          "nom_pow" : "engineNominalPower",
+          "nom_vol" : "engineVoltageRequest",
+          "nom_cur" : "engineNominalCurrent",
+          "eng_sta" : "engineState",
+          "eng_pri" : "enginePriority",
+          "ecu_sta" : "engineECUState",
+          "ecu_fre_sel" : "engineECUFrequencySelect",
+          "spe_req_1" : "engineSpeedRequest2",
+          "req_rpm_1" : "engineRequestedRPM2"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "66148662-902b-11f0-a61c-01e0c85fd5dd"
+      },
+      "name" : "Remap Names",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

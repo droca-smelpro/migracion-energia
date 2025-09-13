@@ -1,0 +1,135 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : {
+      "gateway" : false,
+      "overwriteActivityTime" : false,
+      "description" : ""
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "0f9033f0-8f5b-11f0-a61c-01e0c85fd5dd"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "5fd98570-7f69-11f0-a61c-01e0c85fd5dd"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "d046a630-7f69-11f0-a61c-01e0c85fd5dd"
+    },
+    "label" : "NESTOR CARRETA 500KW",
+    "name" : "GE04",
+    "softwareId" : null,
+    "type" : "electric generator"
+  },
+  "credentials" : {
+    "credentialsId" : "Zaph9INRPg35IwvPKEBo",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1757715341082,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1757715341082,
+      "longValue" : 1757715341082,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1757714715270,
+      "longValue" : 1757714714665,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastConnectTime",
+      "lastUpdateTs" : 1757712366984,
+      "longValue" : 1757712366984,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastDisconnectTime",
+      "lastUpdateTs" : 1757714714691,
+      "longValue" : 1757714714691,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : -12.074657669646964,
+      "jsonValue" : null,
+      "key" : "latitude",
+      "lastUpdateTs" : 1756480705760,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : -76.98148145312287,
+      "jsonValue" : null,
+      "key" : "longitude",
+      "lastUpdateTs" : 1756480705760,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "[{\"data_request\":\"0210106F00030608F700000001B150\"}]",
+      "key" : "rpc_fault_reset",
+      "lastUpdateTs" : 1757709375901,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "[{\"data_request\":\"0210106F00030604FB00000001A19D\"}]",
+      "key" : "rpc_horn_reset",
+      "lastUpdateTs" : 1757709435471,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "[{\"data_request\":\"0210106F00030601FE000000016DC8\"}]",
+      "key" : "rpc_start",
+      "lastUpdateTs" : 1757709265727,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "[{\"data_request\":\"0210106F00030602FD0000000129FB\"}]",
+      "key" : "rpc_stop",
+      "lastUpdateTs" : 1757709303505,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  },
+  "calculatedFields" : [ ]
+}

@@ -1,0 +1,119 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : {
+      "gateway" : false,
+      "overwriteActivityTime" : false,
+      "description" : ""
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "0f9033f0-8f5b-11f0-a61c-01e0c85fd5dd"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "5fd98570-7f69-11f0-a61c-01e0c85fd5dd"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "75f3f780-7f66-11f0-a61c-01e0c85fd5dd"
+    },
+    "label" : "NEXA CAJAMARCA 100KW",
+    "name" : "GE01",
+    "softwareId" : null,
+    "type" : "electric generator"
+  },
+  "credentials" : {
+    "credentialsId" : "p46bVfAZujetStoyUfc4",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1757444197583,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1757444197583,
+      "longValue" : 1757444197582,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1757443554255,
+      "longValue" : 1757443551250,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastConnectTime",
+      "lastUpdateTs" : 1757442467073,
+      "longValue" : 1757442467073,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastDisconnectTime",
+      "lastUpdateTs" : 1757443551263,
+      "longValue" : 1757443551263,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "control_mode",
+      "lastUpdateTs" : 1757372220654,
+      "longValue" : null,
+      "strValue" : "MAN"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : -12.074525260979668,
+      "jsonValue" : null,
+      "key" : "latitude",
+      "lastUpdateTs" : 1756479789674,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : -76.97745337419524,
+      "jsonValue" : null,
+      "key" : "longitude",
+      "lastUpdateTs" : 1756479789674,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "status",
+      "lastUpdateTs" : 1756481052616,
+      "longValue" : null,
+      "strValue" : "Active"
+    } ]
+  },
+  "calculatedFields" : [ ]
+}

@@ -1,0 +1,22 @@
+{
+  "entityType" : "WIDGETS_BUNDLE",
+  "entity" : {
+    "alias" : "widgets_del_proyecto",
+    "description" : null,
+    "externalId" : null,
+    "id" : {
+      "entityType" : "WIDGETS_BUNDLE",
+      "id" : "ce2441f0-7f96-11f0-a61c-01e0c85fd5dd"
+    },
+    "image" : null,
+    "name" : "Widgets del Proyecto",
+    "order" : null,
+    "scada" : false,
+    "title" : "Widgets del Proyecto"
+  },
+  "fqns" : [ "lastest_values_table", "control" ],
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}
