@@ -17,7 +17,10 @@
       }
     },
     "etag" : "6605ae904d01c564a15e1fb486d66439ca87bccc49b9eb9ea1048831fff6e506",
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "TB_RESOURCE",
+      "id" : "e5698850-7fa7-11f0-a61c-01e0c85fd5dd"
+    },
     "fileName" : "Screenshot 2025-08-22 173030.png",
     "id" : {
       "entityType" : "TB_RESOURCE",

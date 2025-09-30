@@ -17,7 +17,10 @@
       }
     },
     "etag" : "489cfc2b632666d10a146422622a2ea633da3fc3bdbe0b59ddbdcf9c1fbd208d",
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "TB_RESOURCE",
+      "id" : "e4d34f80-7f6a-11f0-a61c-01e0c85fd5dd"
+    },
     "fileName" : "logo_aceros.png",
     "id" : {
       "entityType" : "TB_RESOURCE",

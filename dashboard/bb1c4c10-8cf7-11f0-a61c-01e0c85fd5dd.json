@@ -1122,8 +1122,11 @@
     },
     "name" : "Test",
     "resources" : null,
-    "assignedCustomers" : null,
-    "externalId" : null,
+    "assignedCustomers" : [ ],
+    "externalId" : {
+      "entityType" : "DASHBOARD",
+      "id" : "bb1c4c10-8cf7-11f0-a61c-01e0c85fd5dd"
+    },
     "id" : {
       "entityType" : "DASHBOARD",
       "id" : "bb1c4c10-8cf7-11f0-a61c-01e0c85fd5dd"

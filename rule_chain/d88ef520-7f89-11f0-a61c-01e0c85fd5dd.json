@@ -6,10 +6,13 @@
     },
     "configuration" : null,
     "debugMode" : false,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "d88ef520-7f89-11f0-a61c-01e0c85fd5dd"
+    },
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "95a95081-8f37-11f0-a61c-01e0c85fd5dd"
+      "id" : "faa340e0-90c7-11f0-94f7-e3430df9a4b8"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -26,23 +29,15 @@
       "type" : "Success"
     }, {
       "fromIndex" : 1,
-      "toIndex" : 8,
+      "toIndex" : 18,
       "type" : "Success"
     }, {
       "fromIndex" : 4,
       "toIndex" : 3,
       "type" : "Success"
     }, {
-      "fromIndex" : 5,
-      "toIndex" : 2,
-      "type" : "Success"
-    }, {
-      "fromIndex" : 5,
-      "toIndex" : 4,
-      "type" : "Success"
-    }, {
       "fromIndex" : 6,
-      "toIndex" : 5,
+      "toIndex" : 12,
       "type" : "Success"
     }, {
       "fromIndex" : 7,
@@ -64,19 +59,51 @@
       "fromIndex" : 11,
       "toIndex" : 0,
       "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 14,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 14,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 17,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 16,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 19,
+      "type" : "Output"
+    }, {
+      "fromIndex" : 19,
+      "toIndex" : 20,
+      "type" : "Output"
+    }, {
+      "fromIndex" : 20,
+      "toIndex" : 2,
+      "type" : "Output"
     } ],
     "firstNodeIndex" : 1,
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 49,
-        "layoutY" : 478
+        "layoutX" : 25,
+        "layoutY" : 1597
       },
       "configuration" : {
         "renameIn" : "DATA",
         "renameKeysMapping" : {
           "bit" : "statusControllerMode",
-          "tot_gen_pow" : "generatorP",
+          "gen_p" : "generatorP",
           "gen_act_pow_1" : "generatorPL1",
           "gen_act_pow_2" : "generatorPL2",
           "gen_act_pow_3" : "generatorPL3",
@@ -109,13 +136,17 @@
       },
       "configurationVersion" : 2,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1758650617157,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "95a95080-8f37-11f0-a61c-01e0c85fd5dd"
+        "id" : "faa319d0-90c7-11f0-94f7-e3430df9a4b8"
       },
-      "name" : "Remap Names",
+      "name" : "Generator",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
@@ -123,25 +154,25 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 269,
-        "layoutY" : 149
+        "layoutX" : 290,
+        "layoutY" : 150
       },
       "configuration" : {
         "scriptLang" : "JS",
-        "jsScript" : "var modes = {\n  1: 'AUTO',\n  2: 'STOP',\n  4: 'MANUAL',\n  8: 'TEST'\n};\n\nif (msg.bit) {\n    msg.bit = modes[msg.bit] || '';\n}\n\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "jsScript" : "var modes = {\n  1: 'AUTO',\n  2: 'STOP',\n  4: 'MAN',\n  8: 'TEST'\n};\n\nif (msg.bit) {\n    msg.bit = modes[msg.bit] || '';\n}\n\nfor (var key in msg) {\n  if (msg.hasOwnProperty(key)) {\n    if (msg[key] == 4294967295 || msg[key] == 32767) {\n      msg[key] = \"invalido\";\n    }\n  }\n}\n\nmsg.gen_hou_of_op = msg.gen_hou_of_op/100;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
         "tbelScript" : "const modes = {\n  1: 'AUTO',\n  2: 'STOP',\n  4: 'MANUAL',\n  8: 'TEST'\n};\n\nmsg.statusControllerMode = modes[msg.statusControllerMode] || '';\n\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 1757628086720,
+        "allEnabledUntil" : 1758650748438,
         "failuresEnabled" : false
       },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "95a95081-8f37-11f0-a61c-01e0c85fd5dd"
+        "id" : "faa340e0-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Convert some values",
       "queueName" : null,
@@ -151,8 +182,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1310,
-        "layoutY" : 482
+        "layoutX" : 347,
+        "layoutY" : 312
       },
       "configuration" : {
         "version" : 0
@@ -163,7 +194,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "95a97790-8f37-11f0-a61c-01e0c85fd5dd"
+        "id" : "faa340e1-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Output",
       "queueName" : null,
@@ -173,8 +204,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1492,
-        "layoutY" : 402
+        "layoutX" : 730,
+        "layoutY" : 861
       },
       "configuration" : {
         "processingSettings" : {
@@ -191,7 +222,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "405c80b0-8f38-11f0-a61c-01e0c85fd5dd"
+        "id" : "faa340e2-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Save as atrributes",
       "queueName" : null,
@@ -201,13 +232,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 1251,
-        "layoutY" : 399
+        "layoutX" : 420,
+        "layoutY" : 861
       },
       "configuration" : {
         "scriptLang" : "TBEL",
         "jsScript" : "return {msg: msg, metadata: metadata, msgType: msgType};",
-        "tbelScript" : "newMsg = {};\n\nnewMsg.statusControllerMode = msg.statusControllerMode;\n\nreturn {msg: newMsg, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST'};"
+        "tbelScript" : "newMsg = {};\n\nnewMsg.statusControllerMode = msg.statusControllerMode;\nnewMsg.updateStatusBrakerState = msg.updateStatusBrakerState;\n\nreturn {msg: newMsg, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST'};"
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
@@ -215,7 +246,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "7ceca730-8f38-11f0-a61c-01e0c85fd5dd"
+        "id" : "faa340e3-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Filter data for attributes",
       "queueName" : null,
@@ -225,13 +256,13 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 953,
-        "layoutY" : 478
+        "layoutX" : 1169,
+        "layoutY" : 1594
       },
       "configuration" : {
         "renameIn" : "DATA",
         "renameKeysMapping" : {
-          "eng_spe_sp190" : "engineRPM",
+          "eng_speed" : "engineRPM",
           "bat_vol" : "engineBatteryVolts",
           "ai_aux_exc_d+" : "engineDPlus",
           "eng_oil_pr100" : "engineOilPressure",
@@ -294,9 +325,9 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "0a274620-8f5a-11f0-a61c-01e0c85fd5dd"
+        "id" : "faa367f0-90c7-11f0-94f7-e3430df9a4b8"
       },
-      "name" : "Remap Names",
+      "name" : "Engine/ECU",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
@@ -304,8 +335,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 627,
-        "layoutY" : 476
+        "layoutX" : 603,
+        "layoutY" : 1595
       },
       "configuration" : {
         "renameIn" : "DATA",
@@ -327,9 +358,9 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "4f80f1e0-901c-11f0-a61c-01e0c85fd5dd"
+        "id" : "faa367f1-90c7-11f0-94f7-e3430df9a4b8"
       },
-      "name" : "Remap Names",
+      "name" : "Load/System",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
@@ -337,8 +368,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 352,
-        "layoutY" : 472
+        "layoutX" : 328,
+        "layoutY" : 1591
       },
       "configuration" : {
         "renameIn" : "DATA",
@@ -372,9 +403,9 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "ce89d970-901c-11f0-a61c-01e0c85fd5dd"
+        "id" : "faa38f00-90c7-11f0-94f7-e3430df9a4b8"
       },
-      "name" : "Remap Names",
+      "name" : "Mains",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
@@ -382,8 +413,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 75,
-        "layoutY" : 274
+        "layoutX" : 51,
+        "layoutY" : 1393
       },
       "configuration" : {
         "renameIn" : "DATA",
@@ -423,13 +454,13 @@
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 0,
+        "allEnabledUntil" : 1757786390361,
         "failuresEnabled" : false
       },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "66145f50-902b-11f0-a61c-01e0c85fd5dd"
+        "id" : "faa38f01-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Remap Names",
       "queueName" : null,
@@ -439,8 +470,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 304,
-        "layoutY" : 271
+        "layoutX" : 280,
+        "layoutY" : 1390
       },
       "configuration" : {
         "renameIn" : "DATA",
@@ -470,7 +501,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "66148660-902b-11f0-a61c-01e0c85fd5dd"
+        "id" : "faa38f02-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Remap Names",
       "queueName" : null,
@@ -480,8 +511,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 537,
-        "layoutY" : 267
+        "layoutX" : 513,
+        "layoutY" : 1386
       },
       "configuration" : {
         "renameIn" : "DATA",
@@ -502,13 +533,13 @@
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 0,
+        "allEnabledUntil" : 1757786390361,
         "failuresEnabled" : false
       },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "66148661-902b-11f0-a61c-01e0c85fd5dd"
+        "id" : "faa38f03-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Remap Names",
       "queueName" : null,
@@ -518,13 +549,12 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 763,
-        "layoutY" : 272
+        "layoutX" : 739,
+        "layoutY" : 1391
       },
       "configuration" : {
         "renameIn" : "DATA",
         "renameKeysMapping" : {
-          "rpm" : "engineRPM",
           "bat_vol" : "engineBatteryVolts",
           "d" : "engineDPlus",
           "run_hou" : "engineRunningHours",
@@ -562,19 +592,259 @@
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 0,
+        "allEnabledUntil" : 1757786390361,
         "failuresEnabled" : false
       },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "66148662-902b-11f0-a61c-01e0c85fd5dd"
+        "id" : "faa3b610-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Remap Names",
       "queueName" : null,
       "ruleChainId" : null,
       "singletonMode" : false,
       "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 878,
+        "layoutY" : 1593
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "eng_sta" : "engineState"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "01d35b00-9246-11f0-94f7-e3430df9a4b8"
+      },
+      "name" : "Status",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 420,
+        "layoutY" : 945
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "// Define your key mapping\r\nvar keyMap = {\r\n    \"bit_ala_gen\": \"bitlistAlarmGeneral\",\r\n    \"bit_ala_2_lat\": \"bitlistAlarm2Latched\",\r\n    \"bit_ala_3_lat\": \"bitlistAlarms3Latched\",\r\n    \"bit_ala_1_lat\": \"bitlistAlarm1Latched\",\r\n    \"bit_ala_ai_1_\": \"bitlistAlarmAi1Latched\",\r\n    \"bit_ala_gen_l\": \"bitlistAlarmsGenLatched\",\r\n    \"bit_ala_gen_1\": \"bilistAlarmsGen1Latched\",\r\n    \"bit_ala_mai_l\": \"bitlistAlarmsMainsLatched\",\r\n    \"bit_ala_mai_a\": \"bitlistAlarmsMainsActive\",\r\n    \"bit_ala_mai_1\": \"bitlistAlramsMainsLatched\"\r\n};\r\n\r\nvar result = {};\r\n\r\nfunction leftPad(str, length, char) {\r\n    while (str.length < length) {\r\n        str = char + str;\r\n    }\r\n    return str;\r\n}\r\n\r\nfor (var oldKey in keyMap) {\r\n    if (msg.hasOwnProperty(oldKey)) {\r\n        var value = msg[oldKey];\r\n\r\n        // Convert to binary string\r\n        var bin = (value & 0xFFFF).toString(2);\r\n        bin = leftPad(bin, 16, \"0\");\r\n\r\n        result[keyMap[oldKey]] = bin;\r\n    }\r\n}\r\n\r\nreturn { msg: result, metadata: metadata, msgType: msgType };\r\n",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e272dfd0-927a-11f0-94f7-e3430df9a4b8"
+      },
+      "name" : "Alarmas",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 733,
+        "layoutY" : 940
+      },
+      "configuration" : {
+        "defaultTTL" : 0,
+        "useServerTs" : false,
+        "processingSettings" : {
+          "type" : "ON_EVERY_MESSAGE"
+        }
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "38316390-9282-11f0-94f7-e3430df9a4b8"
+      },
+      "name" : "Save as Telemetry",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 420,
+        "layoutY" : 1017
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "// Define your key mapping\r\nvar keyMap = {\r\n    \"bit_con\": \"bitlistControlBits1\",\r\n    \"bit_con_1\": \"bitlistControlBits2\",\r\n    \"bit_con_2\": \"bitlistControlBits3\",\r\n    \"bit_con_3\": \"bitlistControlBits4\",\r\n    \"bit_con_4\": \"bitlistControlBits5\",\r\n};\r\n\r\nvar result = {};\r\n\r\nfunction leftPad(str, length, char) {\r\n    while (str.length < length) {\r\n        str = char + str;\r\n    }\r\n    return str;\r\n}\r\n\r\nfor (var oldKey in keyMap) {\r\n    if (msg.hasOwnProperty(oldKey)) {\r\n        var value = msg[oldKey];\r\n\r\n        // Convert to binary string\r\n        var bin = (value & 0xFFFF).toString(2);\r\n        bin = leftPad(bin, 16, \"0\");\r\n\r\n        result[keyMap[oldKey]] = bin;\r\n    }\r\n}\r\n\r\nreturn { msg: result, metadata: metadata, msgType: msgType };\r\n",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1758645154817,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "aab52fd0-9897-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Control",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1028,
+        "layoutY" : 1015
+      },
+      "configuration" : {
+        "processingSettings" : {
+          "type" : "ON_EVERY_MESSAGE"
+        },
+        "scope" : "SHARED_SCOPE",
+        "notifyDevice" : false,
+        "sendAttributesUpdatedNotification" : false,
+        "updateAttributesOnlyOnValueChange" : false
+      },
+      "configurationVersion" : 3,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1758646082365,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e78c3870-9899-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Save as atrributes",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 734,
+        "layoutY" : 1017
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {};\r\n\r\nvar binStr = msg.bitlistControlBits3; // \"0000100000000000\"\r\n\r\nif (binStr && binStr.length === 16) {\r\n    // GCB closed → mask 0x0800 → bit 11 → index 4\r\n    newMsg.statusBrakerStateGCB = binStr.charAt(4) === \"1\" ? 1 : 0;\r\n\r\n    // MCB closed → mask 0x0400 → bit 10 → index 5\r\n    newMsg.statusBrakerStateMCB = binStr.charAt(5) === \"1\" ? 1 : 0;\r\n}\r\n\r\nreturn { msg: newMsg, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST' };\r\n",
+        "tbelScript" : "var newMsg = {};\r\n\r\nvar binStr = msg.bitlistControlBits3; // \"0000100000000000\"\r\n\r\nif (binStr && binStr.length === 16) {\r\n    // GCB closed → mask 0x0800 → bit 11 → index 4\r\n    newMsg.updateStatusBrakerStateGCB = binStr.charAt(4) === \"1\";\r\n\r\n    // MCB closed → mask 0x0400 → bit 10 → index 5\r\n    newMsg.updateStatusBrakerStateMCB = binStr.charAt(5) === \"1\";\r\n}\r\n\r\nreturn { msg: newMsg, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST' };\r\n"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1758650074281,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "e78c5f80-9899-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Filter data for attributes",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 588,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "1137a8d0-9d45-11f0-a80a-d12bdf692708"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47c6cac0-9d45-11f0-a80a-d12bdf692708"
+      },
+      "name" : "InteliGen4-200",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 877,
+        "layoutY" : 150
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "198a3e80-9d45-11f0-a80a-d12bdf692708"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47c6f1d0-9d45-11f0-a80a-d12bdf692708"
+      },
+      "name" : "EasyGen3200",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 55,
+        "layoutY" : 306
+      },
+      "configuration" : {
+        "forwardMsgToDefaultRuleChain" : false,
+        "ruleChainId" : "22d27ed0-9d45-11f0-a80a-d12bdf692708"
+      },
+      "configurationVersion" : 1,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "47c718e0-9d45-11f0-a80a-d12bdf692708"
+      },
+      "name" : "InteliGen3-200",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainInputNode"
     } ],
     "ruleChainConnections" : null
   },

@@ -4,10 +4,13 @@
     "additionalInfo" : null,
     "configuration" : null,
     "debugMode" : false,
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "c1fbfee0-7f64-11f0-a61c-01e0c85fd5dd"
+    },
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "c1fe48d2-7f64-11f0-a61c-01e0c85fd5dd"
+      "id" : "fc60f670-90c7-11f0-94f7-e3430df9a4b8"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
@@ -75,7 +78,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c1fdd3a0-7f64-11f0-a61c-01e0c85fd5dd"
+        "id" : "fc60a850-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Save Timeseries",
       "queueName" : null,
@@ -102,7 +105,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c1fdd3a1-7f64-11f0-a61c-01e0c85fd5dd"
+        "id" : "fc60a851-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Save Client Attributes",
       "queueName" : null,
@@ -123,7 +126,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c1fdfab0-7f64-11f0-a61c-01e0c85fd5dd"
+        "id" : "fc60cf60-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Message Type Switch",
       "queueName" : null,
@@ -146,7 +149,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c1fe21c0-7f64-11f0-a61c-01e0c85fd5dd"
+        "id" : "fc60cf61-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Log RPC from Device",
       "queueName" : null,
@@ -169,7 +172,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c1fe48d0-7f64-11f0-a61c-01e0c85fd5dd"
+        "id" : "fc60cf62-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Log Other",
       "queueName" : null,
@@ -190,7 +193,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c1fe48d1-7f64-11f0-a61c-01e0c85fd5dd"
+        "id" : "fc60cf63-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "RPC Call Request",
       "queueName" : null,
@@ -213,7 +216,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "c1fe48d2-7f64-11f0-a61c-01e0c85fd5dd"
+        "id" : "fc60f670-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Device Profile Node",
       "queueName" : null,
@@ -236,7 +239,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "91eee9d0-7f8f-11f0-a61c-01e0c85fd5dd"
+        "id" : "fc60f671-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Preprocess",
       "queueName" : null,
@@ -258,13 +261,13 @@
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 0,
-        "failuresEnabled" : false
+        "allEnabledUntil" : 1758819622665,
+        "failuresEnabled" : true
       },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "f3506af0-7f8f-11f0-a61c-01e0c85fd5dd"
+        "id" : "fc60f672-90c7-11f0-94f7-e3430df9a4b8"
       },
       "name" : "Decode",
       "queueName" : null,

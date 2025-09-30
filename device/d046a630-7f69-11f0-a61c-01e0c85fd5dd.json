@@ -8,7 +8,7 @@
     },
     "customerId" : {
       "entityType" : "CUSTOMER",
-      "id" : "0f9033f0-8f5b-11f0-a61c-01e0c85fd5dd"
+      "id" : "a7537230-90cb-11f0-94f7-e3430df9a4b8"
     },
     "deviceData" : {
       "configuration" : {
@@ -22,14 +22,17 @@
       "entityType" : "DEVICE_PROFILE",
       "id" : "5fd98570-7f69-11f0-a61c-01e0c85fd5dd"
     },
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "DEVICE",
+      "id" : "d046a630-7f69-11f0-a61c-01e0c85fd5dd"
+    },
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE",
       "id" : "d046a630-7f69-11f0-a61c-01e0c85fd5dd"
     },
-    "label" : "NESTOR CARRETA 500KW",
-    "name" : "GE04",
+    "label" : "AESA - ICA",
+    "name" : "GEP20",
     "softwareId" : null,
     "type" : "electric generator"
   },
@@ -45,7 +48,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1757715341082,
+      "lastUpdateTs" : 1758652149772,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -53,32 +56,32 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityAlarmTime",
-      "lastUpdateTs" : 1757715341082,
-      "longValue" : 1757715341082,
+      "lastUpdateTs" : 1758652149772,
+      "longValue" : 1758652149772,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1757714715270,
-      "longValue" : 1757714714665,
+      "lastUpdateTs" : 1758651536262,
+      "longValue" : 1758651533245,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastConnectTime",
-      "lastUpdateTs" : 1757712366984,
-      "longValue" : 1757712366984,
+      "lastUpdateTs" : 1758650319977,
+      "longValue" : 1758650319977,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastDisconnectTime",
-      "lastUpdateTs" : 1757714714691,
-      "longValue" : 1757714714691,
+      "lastUpdateTs" : 1758651533248,
+      "longValue" : 1758651533248,
       "strValue" : null
     } ],
     "SHARED_SCOPE" : [ {

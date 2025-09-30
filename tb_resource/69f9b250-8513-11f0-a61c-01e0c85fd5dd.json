@@ -17,7 +17,10 @@
       }
     },
     "etag" : "172288562612a1b674ff685b21cb767f95384d868f38e01f326be5f2203b773f",
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "TB_RESOURCE",
+      "id" : "69f9b250-8513-11f0-a61c-01e0c85fd5dd"
+    },
     "fileName" : "silos_monitoring_no_banner_dashboard_widget_bus_locations_marker_image_3.svg",
     "id" : {
       "entityType" : "TB_RESOURCE",

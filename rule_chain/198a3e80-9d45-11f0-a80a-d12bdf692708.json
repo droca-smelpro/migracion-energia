@@ -1,0 +1,685 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "84780dd0-9d45-11f0-a80a-d12bdf692708"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "198a3e80-9d45-11f0-a80a-d12bdf692708"
+    },
+    "name" : "Remap EasyGen3200",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 3,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 1,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 16,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 10,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 9,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 9,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 11,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 12,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 14,
+      "type" : "true"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 15,
+      "type" : "false"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 5,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 321,
+        "layoutY" : 151
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "tot_gen_pow_1" : "generatorP",
+          "gen_act_pow_1" : "generatorPL1",
+          "gen_act_pow_2" : "generatorPL2",
+          "gen_act_pow_3" : "generatorPL3",
+          "to_ge_re_p_1" : "generatorQ",
+          "tot_gen_app_p" : "generatorS",
+          "gen_pow_fac" : "generatorPowerFactor",
+          "gen_fre" : "generatorFrequency",
+          "gen_vol_l1-_1" : "generatorVoltageL1N",
+          "gen_vol_l2-_1" : "generatorVoltageL2N",
+          "gen_vol_l3-_1" : "generatorVoltageL3N",
+          "gen_vol_l1-" : "generatorVoltageL1L2",
+          "gen_vol_l2-" : "generatorVoltageL2L3",
+          "gen_vol_l3-" : "generatorVoltageL3L1",
+          "gen_cur1" : "generatorCurrentL1",
+          "gen_cur2" : "generatorCurrentL2",
+          "gen_cur3" : "generatorCurrentL3",
+          "gen_rea_ene" : "generatorGensetKWh",
+          "gen_pos_rea_e" : "generatorGensetKVArh",
+          "av._gen_cur" : "generatorCurrentAvg",
+          "av._gen_wye" : "generatorVoltageAvgLN",
+          "av._gen_del" : "generatorVoltageAvgLL",
+          "mea_gro_cur" : "generatorGroundCurrentMeasured",
+          "cal_gro_cur" : "generatorGroundCurrentCalculated",
+          "ska_pow_16_bi" : "scalingPower",
+          "ska_vol_16_bi" : "scalingVolts",
+          "ska_amp_16_bi" : "scalingAmps",
+          "set_fre" : "generatorSetpointFrequency",
+          "set_pow_fac_c" : "generatorSetpointPowerFactor"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "84780dd0-9d45-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Generator",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 60,
+        "layoutY" : 315
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "eng_speed" : "engineRPM",
+          "bat_vol" : "engineBatteryVolts",
+          "ai_aux_exc_d+" : "engineDPlus",
+          "eng_oil_pr100" : "engineOilPressure",
+          "eng_coo_te110" : "engineCoolantTemp",
+          "fue_rat_sp183" : "engineFuelLevel",
+          "gen_hou_of_op" : "engineRunningHours",
+          "eng_num_of_st" : "engineNumStarts",
+          "hou_unt_nex_m" : "engineMaintenanceTimer1RunHours",
+          "day_unt_nex_m" : "engineDaysUntilMaintenance",
+          "fue_tem_sp174" : "engineFuelTemperature",
+          "eng_oil_te175" : "engineOilTemperature",
+          "coo_lev_sp111" : "engineCoolantLevel",
+          "thr_pos_spn91" : "engineThrotlePosition",
+          "loa_at_cur_92" : "engineLoadAtCurrentSpeed",
+          "eng_oil_lev98" : "engineOilLevel",
+          "boo_pre_sp102" : "engineBoostPressure",
+          "int_man_1_105" : "engineIntakeMainfold1Temp",
+          "bar_pre_sp108" : "engineBarometricPressure",
+          "air_inl_te172" : "engineAirInletTemperature",
+          "act_eng_to513" : "engineActualTorque",
+          "exh_gas_te173" : "engineExhaustGasTemp",
+          "eng_int_tem_s" : "engineIntercoolerTemp",
+          "fue_del_pre_s" : "engineFuelDeliveryPressure",
+          "fue_fil_dif_p" : "engineFuelFilterDifferentialPressure",
+          "cra_pre_spn" : "engineCrakcasePressure",
+          "tur_air_inl_p" : "engineTurboAirInletPressure",
+          "air_fil_1_dif" : "engineAirFilter1DifferentialPressure",
+          "coo_pre_spn" : "engineCoolantPressure",
+          "tra_oil_pre_s" : "engineTransmissionOilPressure",
+          "fue_rai_pre_s" : "engineFuelRailPressure",
+          "amb_air_tem_s" : "engineAmbientAirTemperature",
+          "tur_oil_tem_s" : "engineTurboOilTemperature",
+          "tra_oil_tem_s" : "engineTransmissionOilTemperature",
+          "aux_tem_1_spn" : "engineAuxiliaryTemperature1",
+          "aux_tem_2_spn" : "engineAuxiliaryTemperature2",
+          "eng_aux_coo_p" : "engineAuxCoolantPressure",
+          "pre_oil_pre_s" : "enginePreFilterOilPressure",
+          "eng_aux_coo_t" : "engineAuxCoolantTemperature",
+          "fu_fi_di_p_1" : "engineFuelFilterDifferentialPressure",
+          "int_man_5_tem" : "engineIntakeManifoldTemperature5",
+          "int_man_6_tem" : "engineIntakeManifoldTemperature6",
+          "rig_exh_gas_t" : "engineExhaustGasTemperatureRight",
+          "lef_exh_gas_t" : "engineExhaustGasTemperatureLeft",
+          "tur_1_com_out" : "turboCompressorOutletTemperature1",
+          "eng_der_req_s" : "engineDerateRequest",
+          "exh_gas_t4151" : "engineExhaustGasTemperatureAverage",
+          "exh_gas_t4153" : "engineExhaustGasTemperatureBank1",
+          "exh_gas_t4152" : "engineExhaustGasTemperatureBank2",
+          "tot_gen_pow_1" : "generatorTotalPower ",
+          "to_ge_re_p_1" : "generatorTotalReactivePower"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "847834e0-9d45-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Engine/ECU",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 968,
+        "layoutY" : 154
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "res_rea_pow_i" : "loadActualReserve",
+          "nom_rea_pow_i" : "loadNominalP",
+          "act_pow_lsx" : "loadPBySegment",
+          "rea_pow_lsx" : "loadQBySegment"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "84785bf0-9d45-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Load/System",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 644,
+        "layoutY" : 153
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "mai_fre" : "mainsFrequency",
+          "mai_vol_l1-_1" : "mainsVoltageL1N",
+          "mai_vol_l2-_1" : "mainsVoltageL2N",
+          "mai_vol_l3-_1" : "mainsVoltageL3N",
+          "mai_vol_l1-" : "mainsVoltageL1L2",
+          "mai_vol_l2-" : "mainsVoltageL2L3",
+          "mai_vol_l3-" : "mainsVoltageL3L1",
+          "mai_cur_l1" : "mainsL1Current",
+          "tot_mai_pow_1" : "mainsP",
+          "tot_mai_rea_p_1" : "mainsQ",
+          "mai_pow_fac" : "mainsPowerFactor",
+          "av._mai_wye" : "mainsVoltageAvgLN",
+          "av._mai_del" : "mainsVoltageAvgLL",
+          "av._mai_cur" : "mainsCurrentAvg",
+          "ave_lsx_del_m" : "mainsVoltageLSxDeltaLL",
+          "ave_lsx_wye_m" : "mainsVoltageLSxWyeLN",
+          "ave_lsx_mai_d" : "mainsFrequencyLSxDeltaLL"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "84785bf1-9d45-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Mains",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 354,
+        "layoutY" : 315
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "eng_sta" : "engineState",
+          "bit" : "statusControllerMode"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "84785bf2-9d45-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Status",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 962,
+        "layoutY" : 316
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : null,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "91b7ee20-9d45-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Output",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.flow.TbRuleChainOutputNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 683,
+        "layoutY" : 463
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "// Define your key mapping\r\nvar keyMap = {\r\n    \"bit_ala_gen\": \"bitlistAlarmGeneral\",\r\n    \"bit_ala_2_lat\": \"bitlistAlarm2Latched\",\r\n    \"bit_ala_3_lat\": \"bitlistAlarms3Latched\",\r\n    \"bit_ala_1_lat\": \"bitlistAlarm1Latched\",\r\n    \"bit_ala_ai_1_\": \"bitlistAlarmAi1Latched\",\r\n    \"bit_ala_gen_l\": \"bitlistAlarmsGenLatched\",\r\n    \"bit_ala_gen_1\": \"bilistAlarmsGen1Latched\",\r\n    \"bit_ala_mai_l\": \"bitlistAlarmsMainsLatched\",\r\n    \"bit_ala_mai_a\": \"bitlistAlarmsMainsActive\",\r\n    \"bit_ala_mai_1\": \"bitlistAlramsMainsLatched\"\r\n};\r\n\r\nvar result = {};\r\n\r\nfunction leftPad(str, length, char) {\r\n    while (str.length < length) {\r\n        str = char + str;\r\n    }\r\n    return str;\r\n}\r\n\r\nfor (var oldKey in keyMap) {\r\n    if (msg.hasOwnProperty(oldKey)) {\r\n        var value = msg[oldKey];\r\n\r\n        // Convert to binary string\r\n        var bin = (value & 0xFFFF).toString(2);\r\n        bin = leftPad(bin, 16, \"0\");\r\n\r\n        result[keyMap[oldKey]] = bin;\r\n    }\r\n}\r\n\r\nreturn { msg: result, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST' };",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1759177110437,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0c519b10-9d4e-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Alarmas",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 679,
+        "layoutY" : 401
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "// Define your key mapping\r\nvar keyMap = {\r\n    \"bit_con\": \"bitlistControlBits1\",\r\n    \"bit_con_1\": \"bitlistControlBits2\",\r\n    \"bit_con_2\": \"bitlistControlBits3\",\r\n    \"bit_con_3\": \"bitlistControlBits4\",\r\n    \"bit_con_4\": \"bitlistControlBits5\",\r\n    \"bit_con_5\": \"bitlistControlBits6\"\r\n};\r\n\r\nvar result = {};\r\n\r\nfunction leftPad(str, length, char) {\r\n    while (str.length < length) {\r\n        str = char + str;\r\n    }\r\n    return str;\r\n}\r\n\r\nfor (var oldKey in keyMap) {\r\n    if (msg.hasOwnProperty(oldKey)) {\r\n        var value = msg[oldKey];\r\n\r\n        // Convert to binary string\r\n        var bin = (value & 0xFFFF).toString(2);\r\n        bin = leftPad(bin, 16, \"0\");\r\n\r\n        result[keyMap[oldKey]] = bin;\r\n    }\r\n}\r\n\r\nreturn { msg: result, metadata: metadata, msgType: msgType };\r\n",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0c519b11-9d4e-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Status",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1293,
+        "layoutY" : 429
+      },
+      "configuration" : {
+        "processingSettings" : {
+          "type" : "ON_EVERY_MESSAGE"
+        },
+        "scope" : "SHARED_SCOPE",
+        "notifyDevice" : false,
+        "sendAttributesUpdatedNotification" : false,
+        "updateAttributesOnlyOnValueChange" : false
+      },
+      "configurationVersion" : 3,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0c51c220-9d4e-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Save as atrributes",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 978,
+        "layoutY" : 401
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "// Mapping: each group has alarms with bit positions (MSB = bit 15, LSB = bit 0)\r\nvar alarmMaps = {\r\n    bitlistControlBits1: {},\r\n\r\n    bitlistControlBits2: {\r\n        \"emergencyModeActive\": 11,\r\n    },\r\n\r\n    bitlistControlBits3: {\r\n        \"statusBrakerStateGCB\": 11,\r\n        \"statusBrakerStateMCB\": 10,\r\n\r\n    },\r\n\r\n    bitlistControlBits4: {},\r\n\r\n    bitlistControlBits5: {},\r\n\r\n    bitlistControlBits6: {}\r\n};\r\n\r\n\r\nvar newMsg = {};\r\n\r\n// Decode function (ES5 style)\r\nfunction decodeBits(binaryStr, map) {\r\n    var result = {};\r\n    var keys = Object.keys(map);\r\n    for (var i = 0; i < keys.length; i++) {\r\n        var alarm = keys[i];\r\n        var pos = map[alarm];\r\n        var idx = binaryStr.length - 1 - pos;\r\n        var bit = (idx >= 0) ? binaryStr.charAt(idx) : \"0\";\r\n        result[alarm] = (bit === \"1\");\r\n    }\r\n    return result;\r\n}\r\n\r\n// Process each group\r\nfor (var group in alarmMaps) {\r\n    if (msg[group]) {\r\n        var decoded = decodeBits(msg[group], alarmMaps[\r\n            group]);\r\n        for (var k in decoded) {\r\n            newMsg[k] = decoded[k];\r\n        }\r\n    }\r\n}\r\n\r\nreturn {\r\n    msg: newMsg,\r\n    metadata: metadata,\r\n    msgType: 'POST_ATTRIBUTES_REQUEST'\r\n};\r\n\r\n\r\n/*\r\nvar newMsg = {};\r\n\r\nvar binStr = msg.bitlistControlBits3; // \"0000100000000000\"\r\n\r\nif (binStr && binStr.length === 16) {\r\n    // GCB closed → mask 0x0800 → bit 11 → index 4\r\n    newMsg.statusBrakerStateGCB = binStr.charAt(4) === \"1\" ? 1 : 0;\r\n\r\n    // MCB closed → mask 0x0400 → bit 10 → index 5\r\n    newMsg.statusBrakerStateMCB = binStr.charAt(5) === \"1\" ? 1 : 0;\r\n}\r\n\r\nreturn { msg: newMsg, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST' };\r\n*/",
+        "tbelScript" : "var newMsg = {};\r\n\r\nvar binStr = msg.bitlistControlBits3; // \"0000100000000000\"\r\n\r\nif (binStr && binStr.length === 16) {\r\n    // GCB closed → mask 0x0800 → bit 11 → index 4\r\n    newMsg.updateStatusBrakerStateGCB = binStr.charAt(4) === \"1\";\r\n\r\n    // MCB closed → mask 0x0400 → bit 10 → index 5\r\n    newMsg.updateStatusBrakerStateMCB = binStr.charAt(5) === \"1\";\r\n}\r\n\r\nreturn { msg: newMsg, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST' };\r\n"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "0c51c221-9d4e-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Generate keys",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 980,
+        "layoutY" : 463
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "// Mapping: each group has alarms with bit positions (MSB = bit 15, LSB = bit 0)\r\nvar alarmMaps = {\r\n  bitlistAlarmGeneral: {\r\n    \"Alarma clase F enclavada\": 5,\r\n    \"Alarma clase E enclavada\": 4,\r\n    \"Alarma clase D enclavada\": 3,\r\n    \"Alarma clase C enclavada\": 2,\r\n    \"Alarma clase B enclavada\": 1,\r\n    \"Alarma clase A enclavada\": 0\r\n  },\r\n\r\n  bitlistAlarms2Latched: {\r\n    \"Sincronización GCB expirada enclavada\": 15,\r\n    \"Sincronización MCB expirada enclavada\": 14,\r\n    \"Sincronización GGB expirada enclavada\": 13,\r\n    \"Fallo de carga (función D+) enclavada\": 12,\r\n    \"Fallo rango de operación 12 enclavada\": 11,\r\n    \"Sobrecarga CPU R1 disparo enclavada\": 10,\r\n    \"Fallo MCB 50BF\": 9,\r\n    \"Fallo GCB 50BF\": 8,\r\n    \"Alarma de protección ECU\": 7,\r\n    \"Alarma de emisiones ECU\": 6,\r\n    \"Error CANopen en interfaz CAN 2\": 5,\r\n    \"Alineación de parámetros LDSS\": 4,\r\n    \"Miembros faltantes\": 3,\r\n    \"Plausibilidad MCB\": 2,\r\n    \"Alarma ECU lámpara roja enclavada\": 1,\r\n    \"Alarma ECU lámpara amarilla enclavada\": 0\r\n  },\r\n\r\n  bitlistAlarms3Latched: {\r\n    \"Fallo GGB al cerrar enclavada\": 15,\r\n    \"Fallo GGB al abrir enclavada\": 14,\r\n    \"Falta easYgen\": 13,\r\n    \"Falta LS5\": 12,\r\n    \"Temperatura cilindro nivel 1\": 11,\r\n    \"Temperatura cilindro nivel 2\": 10,\r\n    \"Ruptura cable temperatura cilindro\": 9,\r\n    \"Pérdida de paso (pole slip)\": 8,\r\n    \"Actualización sistema LS5\": 7,\r\n    \"Actualización sistema easYgen\": 6,\r\n    \"Cableado AC Generador\": 5,\r\n    \"Cableado AC Barra 1\": 4\r\n  },\r\n\r\n  bitlistAlarms1Latched: {\r\n    \"Sobrevelocidad motor 1 enclavada\": 15,\r\n    \"Sobrevelocidad motor 2 enclavada\": 14,\r\n    \"Subvelocidad motor 1 enclavada\": 13,\r\n    \"Subvelocidad motor 2 enclavada\": 12,\r\n    \"Parada no intencionada detectada enclavada\": 11,\r\n    \"Alarma detección de velocidad enclavada\": 10,\r\n    \"Fallo detección de apagado enclavado\": 9,\r\n    \"Fallo GCB al cerrar enclavada\": 8,\r\n    \"Fallo GCB al abrir enclavada\": 7,\r\n    \"Fallo MCB al cerrar enclavada\": 6,\r\n    \"Fallo MCB al abrir enclavada\": 5,\r\n    \"Fallo general CAN-J1939 enclavada\": 4,\r\n    \"Fallo de arranque detectado enclavada\": 3,\r\n    \"Mantenimiento por días excedido enclavada\": 2,\r\n    \"Mantenimiento por horas excedido enclavada\": 1,\r\n    \"Error CANopen en interfaz CAN 1\": 0\r\n  },\r\n\r\n  bitlistAlarmsAI1Latched: {\r\n    \"Fallo alternador de carga (D+)\": 4,\r\n    \"Batería sobretensión 2 enclavada\": 3,\r\n    \"Batería subtensión 2 enclavada\": 2,\r\n    \"Batería sobretensión 1 enclavada\": 1,\r\n    \"Batería subtensión 1 enclavada\": 0\r\n  },\r\n\r\n  bitlistAlarmsGenLatched: {\r\n    \"Generador sobre frecuencia 1 enclavada\": 15,\r\n    \"Generador sobre frecuencia 2 enclavada\": 14,\r\n    \"Generador baja frecuencia 1 enclavada\": 13,\r\n    \"Generador baja frecuencia 2 enclavada\": 12,\r\n    \"Generador sobretensión 1 enclavada\": 11,\r\n    \"Generador sobretensión 2 enclavada\": 10,\r\n    \"Generador subtensión 1 enclavada\": 9,\r\n    \"Generador subtensión 2 enclavada\": 8,\r\n    \"Generador sobrecorriente 1 enclavada\": 7,\r\n    \"Generador sobrecorriente 2 enclavada\": 6,\r\n    \"Generador sobrecorriente 3 enclavada\": 5,\r\n    \"Potencia inversa / reducida 1 enclavada\": 4,\r\n    \"Potencia inversa / reducida 2 enclavada\": 3,\r\n    \"Sobrecarga generador IOP 1 enclavada\": 2,\r\n    \"Sobrecarga generador IOP 2 enclavada\": 1,\r\n    \"Desajuste rotación fases barra enclavado\": 0\r\n  },\r\n\r\n  bitlistAlarmsGen1Latched: {\r\n    \"Generador carga desequilibrada 1 enclavada\": 15,\r\n    \"Generador carga desequilibrada 2 enclavada\": 14,\r\n    \"Asimetría tensión generador enclavada\": 13,\r\n    \"Falla a tierra 1 enclavada\": 12,\r\n    \"Falla a tierra 2 enclavada\": 11,\r\n    \"Desajuste rotación fases gen. enclavada\": 10,\r\n    \"Desajuste potencia activa gen. enclavada\": 9,\r\n    \"Desajuste descarga generador enclavada\": 8,\r\n    \"Sobrecorriente tiempo inverso enclavada\": 7,\r\n    \"Fallo rango de operación enclavada\": 6,\r\n    \"Sobrecarga generador MOP 1 enclavada\": 5,\r\n    \"Sobrecarga generador MOP 2 enclavada\": 4,\r\n    \"Factor potencia generador atrasado 1 enclavada\": 3,\r\n    \"Factor potencia generador atrasado 2 enclavada\": 2,\r\n    \"Factor potencia generador adelantado 1 enclavada\": 1,\r\n    \"Factor potencia generador adelantado 2 enclavada\": 0\r\n  },\r\n\r\n  bitlistAlarmsMainsLatched: {\r\n    \"Red sobre frecuencia 1 enclavada\": 15,\r\n    \"Red sobre frecuencia 2 enclavada\": 14,\r\n    \"Red baja frecuencia 1 enclavada\": 13,\r\n    \"Red baja frecuencia 2 enclavada\": 12,\r\n    \"Red sobretensión 1 enclavada\": 11,\r\n    \"Red sobretensión 2 enclavada\": 10,\r\n    \"Red subtensión 1 enclavada\": 9,\r\n    \"Red subtensión 2 enclavada\": 8,\r\n    \"Desfase red enclavado\": 7,\r\n    \"Desacoplamiento red enclavado\": 6,\r\n    \"Cableado AC Red\": 5,\r\n    \"Desajuste rotación fases red enclavada\": 2\r\n  },\r\n\r\n  bitlistAlarmsMainsActive: {\r\n    \"Red sobre frecuencia 1\": 15,\r\n    \"Red sobre frecuencia 2\": 14,\r\n    \"Red baja frecuencia 1\": 13,\r\n    \"Red baja frecuencia 2\": 12,\r\n    \"Red sobretensión 1\": 11,\r\n    \"Red sobretensión 2\": 10,\r\n    \"Red subtensión 1\": 9,\r\n    \"Red subtensión 2\": 8,\r\n    \"Desfase red\": 7,\r\n    \"Desacoplamiento red\": 6,\r\n    \"Cableado AC Red\": 5,\r\n    \"Desajuste rotación fases red\": 2\r\n  },\r\n\r\n  bitlistAlarmsMains1Latched: {\r\n    \"Red importación potencia 1 enclavada\": 15,\r\n    \"Red importación potencia 2 enclavada\": 14,\r\n    \"Red exportación potencia 1 enclavada\": 13,\r\n    \"Red exportación potencia 2 enclavada\": 12,\r\n    \"Factor potencia red atrasado 1 enclavada\": 11,\r\n    \"Factor potencia red atrasado 2 enclavada\": 10,\r\n    \"Factor potencia red adelantado 1 enclavada\": 9,\r\n    \"Factor potencia red adelantado 2 enclavada\": 8,\r\n    \"df/dt red enclavado\": 7,\r\n    \"Desajuste potencia activa red enclavada\": 6,\r\n    \"Red Voltaje dependiente tiempo 1 (FRT) enclavada\": 5,\r\n    \"Red Voltaje dependiente tiempo 3 (FRT) enclavada\": 4,\r\n    \"Aumento lento voltaje red (10 min)\": 3,\r\n    \"Red Voltaje dependiente tiempo 2 (FRT) enclavada\": 2,\r\n    \"Red monitoreo QV paso 1 enclavada\": 1,\r\n    \"Red monitoreo QV paso 2 enclavada\": 0\r\n  }\r\n};\r\n\r\n\r\nvar newMsg = {};\r\n\r\n// Decode function (ES5 style)\r\nfunction decodeBits(binaryStr, map) {\r\n  var result = {};\r\n  var keys = Object.keys(map);\r\n  for (var i = 0; i < keys.length; i++) {\r\n    var alarm = keys[i];\r\n    var pos = map[alarm];\r\n    var idx = binaryStr.length - 1 - pos;\r\n    var bit = (idx >= 0) ? binaryStr.charAt(idx) : \"0\";\r\n    result[alarm] = (bit === \"1\");\r\n  }\r\n  return result;\r\n}\r\n\r\n// Process each group\r\nfor (var group in alarmMaps) {\r\n  if (msg[group]) {\r\n    var decoded = decodeBits(msg[group], alarmMaps[group]);\r\n    for (var k in decoded) {\r\n      newMsg[k] = decoded[k];\r\n    }\r\n  }\r\n}\r\n\r\nreturn { msg: newMsg, metadata: metadata, msgType: 'POST_ATTRIBUTES_REQUEST' };\r\n",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1759188326209,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "3d4d9bd0-9d56-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Generate keys",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 686,
+        "layoutY" : 586
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var arr = Object.keys(msg).map(function(k) {\n  return { key: k, value: msg[k] };\n});\n\nreturn {msg: arr, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1759188292806,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "c7d0d430-9d7d-11f0-a80a-d12bdf692708"
+      },
+      "name" : "JSON to Array",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1004,
+        "layoutY" : 588
+      },
+      "configuration" : {
+        "version" : 0
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1759244671411,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "a96fe3f0-9d8c-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Split",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbSplitArrayMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1304,
+        "layoutY" : 587
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "function nextRelation(metadata, msg) {\n    if(msg.value == 'true') {\n        return ['true'];\n    }\n    else {\n        return ['false'];\n    }\n}\n\nreturn nextRelation(metadata, msg);",
+        "tbelScript" : ""
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1759244671411,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "1c47f4c0-9d8e-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Switch",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsSwitchNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1586,
+        "layoutY" : 521
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "useMessageAlarmData" : false,
+        "overwriteAlarmDetails" : false,
+        "alarmType" : "$[key]",
+        "severity" : "MINOR",
+        "propagate" : false,
+        "relationTypes" : [ ],
+        "propagateToOwner" : false,
+        "propagateToTenant" : false,
+        "dynamicSeverity" : false
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1759244683402,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "22cd4f10-9d8f-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Create Alarm",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbCreateAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1584,
+        "layoutY" : 665
+      },
+      "configuration" : {
+        "scriptLang" : "TBEL",
+        "alarmDetailsBuildJs" : "var details = {};\nif (metadata.prevAlarmDetails) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    delete metadata.prevAlarmDetails;\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmDetailsBuildTbel" : "var details = {};\nif (metadata.prevAlarmDetails != null) {\n    details = JSON.parse(metadata.prevAlarmDetails);\n    //remove prevAlarmDetails from metadata\n    metadata.remove('prevAlarmDetails');\n    //now metadata is the same as it comes IN this rule node\n}\n\n\nreturn details;",
+        "alarmType" : "$[key]"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1759244683402,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "22cd9d30-9d8f-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Clear Alarm",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.action.TbClearAlarmNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 668,
+        "layoutY" : 309
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "msg.loadP = msg.generatorP + msg.mainsP;\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};",
+        "tbelScript" : "const modes = {\n  1: 'AUTO',\n  2: 'STOP',\n  4: 'MANUAL',\n  8: 'TEST'\n};\n\nmsg.statusControllerMode = modes[msg.statusControllerMode] || '';\n\n\nreturn {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "configurationVersion" : 0,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "4f6716a0-9e25-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Convert some values",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

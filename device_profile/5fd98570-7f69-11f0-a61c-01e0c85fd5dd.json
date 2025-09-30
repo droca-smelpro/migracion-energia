@@ -7,7 +7,10 @@
     "defaultQueueName" : null,
     "defaultRuleChainId" : null,
     "description" : "",
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "5fd98570-7f69-11f0-a61c-01e0c85fd5dd"
+    },
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE_PROFILE",
@@ -38,5 +41,42 @@
   "attributes" : {
     "SERVER_SCOPE" : [ ]
   },
-  "calculatedFields" : [ ]
+  "calculatedFields" : [ {
+    "configuration" : {
+      "type" : "SCRIPT",
+      "arguments" : {
+        "bit_ala_2_lat" : {
+          "defaultValue" : "",
+          "refEntityKey" : {
+            "key" : "bit_ala_2_lat",
+            "type" : "TS_LATEST"
+          }
+        },
+        "bit_ala_gen" : {
+          "defaultValue" : "",
+          "refEntityKey" : {
+            "key" : "bit_ala_gen",
+            "type" : "TS_LATEST"
+          }
+        }
+      },
+      "expression" : "function to16BitBinary(num) {\r\n    // Mask with 0xFFFF to keep only the lowest 16 bits\r\n    var bin = java.lang.Integer.toBinaryString(num & 0xFFFF);\r\n    while (bin.length < 16) {\r\n        bin = \"0\" + bin;\r\n    }\r\n    return bin;\r\n}\r\n\r\nreturn {\r\n    \"bitlistAlarmGeneral\": to16BitBinary(bit_ala_gen),\r\n    \"bitlistAlarm2Latched\": to16BitBinary(bit_ala_2_lat)\r\n};",
+      "output" : {
+        "name" : "",
+        "type" : "TIME_SERIES"
+      }
+    },
+    "configurationVersion" : 0,
+    "debugSettings" : {
+      "allEnabled" : false,
+      "allEnabledUntil" : 1757969289896,
+      "failuresEnabled" : true
+    },
+    "name" : "Alarmas",
+    "tenantId" : {
+      "entityType" : "TENANT",
+      "id" : "d2855350-90c7-11f0-94f7-e3430df9a4b8"
+    },
+    "type" : "SCRIPT"
+  } ]
 }

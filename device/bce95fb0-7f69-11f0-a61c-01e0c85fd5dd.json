@@ -8,7 +8,7 @@
     },
     "customerId" : {
       "entityType" : "CUSTOMER",
-      "id" : "0f9033f0-8f5b-11f0-a61c-01e0c85fd5dd"
+      "id" : "a7537230-90cb-11f0-94f7-e3430df9a4b8"
     },
     "deviceData" : {
       "configuration" : {
@@ -22,14 +22,17 @@
       "entityType" : "DEVICE_PROFILE",
       "id" : "5fd98570-7f69-11f0-a61c-01e0c85fd5dd"
     },
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "DEVICE",
+      "id" : "bce95fb0-7f69-11f0-a61c-01e0c85fd5dd"
+    },
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE",
       "id" : "bce95fb0-7f69-11f0-a61c-01e0c85fd5dd"
     },
     "label" : "LA ARENA 100KW",
-    "name" : "GE02",
+    "name" : "Electra_1",
     "softwareId" : null,
     "type" : "electric generator"
   },
@@ -45,7 +48,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1757778281904,
+      "lastUpdateTs" : 1758137373383,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -53,48 +56,48 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityAlarmTime",
-      "lastUpdateTs" : 1757778281904,
-      "longValue" : 1757778281904,
+      "lastUpdateTs" : 1758137373383,
+      "longValue" : 1758137373383,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1757777631253,
-      "longValue" : 1757777630876,
+      "lastUpdateTs" : 1758136768239,
+      "longValue" : 1758136767359,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastConnectTime",
-      "lastUpdateTs" : 1757776678786,
-      "longValue" : 1757776678786,
+      "lastUpdateTs" : 1758127872017,
+      "longValue" : 1758127872017,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastDisconnectTime",
-      "lastUpdateTs" : 1757777630901,
-      "longValue" : 1757777630901,
+      "lastUpdateTs" : 1758136767384,
+      "longValue" : 1758136767384,
       "strValue" : null
     } ],
     "SHARED_SCOPE" : [ {
       "booleanValue" : null,
-      "doubleValue" : -12.069663138318802,
+      "doubleValue" : -12.07331805721944,
       "jsonValue" : null,
       "key" : "latitude",
-      "lastUpdateTs" : 1756480688464,
+      "lastUpdateTs" : 1758714886103,
       "longValue" : null,
       "strValue" : null
     }, {
       "booleanValue" : null,
-      "doubleValue" : -76.97811155074493,
+      "doubleValue" : -76.97924814696643,
       "jsonValue" : null,
       "key" : "longitude",
-      "lastUpdateTs" : 1756480688464,
+      "lastUpdateTs" : 1758714886103,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -110,9 +113,9 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "statusControllerMode",
-      "lastUpdateTs" : 1757630078148,
+      "lastUpdateTs" : 1758135278486,
       "longValue" : null,
-      "strValue" : "AUTO"
+      "strValue" : "STOP"
     } ]
   },
   "calculatedFields" : [ ]

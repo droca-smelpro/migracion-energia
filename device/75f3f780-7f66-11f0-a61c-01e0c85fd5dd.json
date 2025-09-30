@@ -8,7 +8,7 @@
     },
     "customerId" : {
       "entityType" : "CUSTOMER",
-      "id" : "0f9033f0-8f5b-11f0-a61c-01e0c85fd5dd"
+      "id" : "a7537230-90cb-11f0-94f7-e3430df9a4b8"
     },
     "deviceData" : {
       "configuration" : {
@@ -22,14 +22,17 @@
       "entityType" : "DEVICE_PROFILE",
       "id" : "5fd98570-7f69-11f0-a61c-01e0c85fd5dd"
     },
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "DEVICE",
+      "id" : "75f3f780-7f66-11f0-a61c-01e0c85fd5dd"
+    },
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE",
       "id" : "75f3f780-7f66-11f0-a61c-01e0c85fd5dd"
     },
-    "label" : "NEXA CAJAMARCA 100KW",
-    "name" : "GE01",
+    "label" : "AESA -  ICA",
+    "name" : "GEP28",
     "softwareId" : null,
     "type" : "electric generator"
   },
@@ -45,7 +48,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1757444197583,
+      "lastUpdateTs" : 1758216933707,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -53,32 +56,32 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityAlarmTime",
-      "lastUpdateTs" : 1757444197583,
-      "longValue" : 1757444197582,
+      "lastUpdateTs" : 1758216933707,
+      "longValue" : 1758216933707,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1757443554255,
-      "longValue" : 1757443551250,
+      "lastUpdateTs" : 1758216298240,
+      "longValue" : 1758216297954,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastConnectTime",
-      "lastUpdateTs" : 1757442467073,
-      "longValue" : 1757442467073,
+      "lastUpdateTs" : 1758215626618,
+      "longValue" : 1758215626617,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastDisconnectTime",
-      "lastUpdateTs" : 1757443551263,
-      "longValue" : 1757443551263,
+      "lastUpdateTs" : 1758216297964,
+      "longValue" : 1758216297964,
       "strValue" : null
     } ],
     "SHARED_SCOPE" : [ {
@@ -103,6 +106,30 @@
       "jsonValue" : null,
       "key" : "longitude",
       "lastUpdateTs" : 1756479789674,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "[{\"data_request\":\"0310106F00030608F700000001B3D1\"}]",
+      "key" : "rpc_fault_reset",
+      "lastUpdateTs" : 1758126829299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "[{\"data_request\":\"0310106F00030601FE000000016F49\"}]",
+      "key" : "rpc_start",
+      "lastUpdateTs" : 1758126356005,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "[{\"data_request\":\"0310106F00030602FD000000012B7A\"}]",
+      "key" : "rpc_stop",
+      "lastUpdateTs" : 1758126536848,
       "longValue" : null,
       "strValue" : null
     }, {

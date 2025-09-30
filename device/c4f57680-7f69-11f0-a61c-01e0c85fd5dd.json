@@ -8,7 +8,7 @@
     },
     "customerId" : {
       "entityType" : "CUSTOMER",
-      "id" : "0f9033f0-8f5b-11f0-a61c-01e0c85fd5dd"
+      "id" : "a7537230-90cb-11f0-94f7-e3430df9a4b8"
     },
     "deviceData" : {
       "configuration" : {
@@ -22,14 +22,17 @@
       "entityType" : "DEVICE_PROFILE",
       "id" : "5fd98570-7f69-11f0-a61c-01e0c85fd5dd"
     },
-    "externalId" : null,
+    "externalId" : {
+      "entityType" : "DEVICE",
+      "id" : "c4f57680-7f69-11f0-a61c-01e0c85fd5dd"
+    },
     "firmwareId" : null,
     "id" : {
       "entityType" : "DEVICE",
       "id" : "c4f57680-7f69-11f0-a61c-01e0c85fd5dd"
     },
-    "label" : "Peru Nesa Cajamarquilla",
-    "name" : "GE03",
+    "label" : "Chalcobamba - Cuzco",
+    "name" : "GEF08",
     "softwareId" : null,
     "type" : "electric generator"
   },
@@ -45,7 +48,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1757781664832,
+      "lastUpdateTs" : 1759243134982,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -53,48 +56,664 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityAlarmTime",
-      "lastUpdateTs" : 1757632300031,
-      "longValue" : 1757632300031,
+      "lastUpdateTs" : 1759239731675,
+      "longValue" : 1759239731675,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1757784495252,
-      "longValue" : 1757784495226,
+      "lastUpdateTs" : 1759272650256,
+      "longValue" : 1759272648951,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastConnectTime",
-      "lastUpdateTs" : 1757781664832,
-      "longValue" : 1757781664832,
+      "lastUpdateTs" : 1759244214639,
+      "longValue" : 1759244214639,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastDisconnectTime",
-      "lastUpdateTs" : 1757784495251,
-      "longValue" : 1757784495251,
+      "lastUpdateTs" : 1759243760252,
+      "longValue" : 1759243760252,
       "strValue" : null
     } ],
     "SHARED_SCOPE" : [ {
-      "booleanValue" : null,
-      "doubleValue" : -12.070502560374754,
+      "booleanValue" : false,
+      "doubleValue" : null,
       "jsonValue" : null,
-      "key" : "latitude",
-      "lastUpdateTs" : 1756480696690,
+      "key" : "Actualización sistema LS5",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Actualización sistema easYgen",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Alarm class A latched",
+      "lastUpdateTs" : 1759165932751,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Alarm class B latched",
+      "lastUpdateTs" : 1759165932751,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Alarm class C latched",
+      "lastUpdateTs" : 1759165932751,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Alarm class D latched",
+      "lastUpdateTs" : 1759165932751,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Alarm class E latched",
+      "lastUpdateTs" : 1759165932751,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Alarm class F latched",
+      "lastUpdateTs" : 1759165932751,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Alarma clase A enclavada",
+      "lastUpdateTs" : 1759272695281,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Alarma clase B enclavada",
+      "lastUpdateTs" : 1759272695281,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Alarma clase C enclavada",
+      "lastUpdateTs" : 1759272695281,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Alarma clase D enclavada",
+      "lastUpdateTs" : 1759272695281,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Alarma clase E enclavada",
+      "lastUpdateTs" : 1759272695281,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Alarma clase F enclavada",
+      "lastUpdateTs" : 1759272695281,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Cableado AC Barra 1",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Cableado AC Generador",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Cableado AC Red",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Desacoplamiento red",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Desacoplamiento red enclavado",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Desajuste rotación fases barra enclavado",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Desajuste rotación fases red",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Desajuste rotación fases red enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Desfase red",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Desfase red enclavado",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Fallo GGB al abrir enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Fallo GGB al cerrar enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Falta LS5",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Falta easYgen",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Generador baja frecuencia 1 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Generador baja frecuencia 2 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Generador sobre frecuencia 1 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Generador sobre frecuencia 2 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Generador sobrecorriente 1 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Generador sobrecorriente 2 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Generador sobrecorriente 3 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Generador sobretensión 1 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Generador sobretensión 2 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Generador subtensión 1 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Generador subtensión 2 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Potencia inversa / reducida 1 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Potencia inversa / reducida 2 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Pérdida de paso (pole slip)",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red baja frecuencia 1",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red baja frecuencia 1 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red baja frecuencia 2",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red baja frecuencia 2 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red sobre frecuencia 1",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red sobre frecuencia 1 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red sobre frecuencia 2",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red sobre frecuencia 2 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red sobretensión 1",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red sobretensión 1 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red sobretensión 2",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red sobretensión 2 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red subtensión 1",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red subtensión 1 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red subtensión 2",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Red subtensión 2 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Ruptura cable temperatura cilindro",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Sobrecarga generador IOP 1 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Sobrecarga generador IOP 2 enclavada",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Temperatura cilindro nivel 1",
+      "lastUpdateTs" : 1759272641299,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "Temperatura cilindro nivel 2",
+      "lastUpdateTs" : 1759272641299,
       "longValue" : null,
       "strValue" : null
     }, {
       "booleanValue" : null,
-      "doubleValue" : -76.97456993359614,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "bilistAlarmsGen1Latched",
+      "lastUpdateTs" : 1759165398708,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "bitlistAlarm1Latched",
+      "lastUpdateTs" : 1759165398708,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "bitlistAlarm2Latched",
+      "lastUpdateTs" : 1759165392237,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "bitlistAlarmAi1Latched",
+      "lastUpdateTs" : 1759165398708,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "bitlistAlarmGeneral",
+      "lastUpdateTs" : 1759165392237,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "bitlistAlarms3Latched",
+      "lastUpdateTs" : 1759165398708,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "bitlistAlarmsGenLatched",
+      "lastUpdateTs" : 1759165398708,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "bitlistAlarmsMainsActive",
+      "lastUpdateTs" : 1759165398708,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "bitlistAlarmsMainsLatched",
+      "lastUpdateTs" : 1759165398708,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "bitlistAlramsMainsLatched",
+      "lastUpdateTs" : 1759165398708,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "emergencyModeActive",
+      "lastUpdateTs" : 1759272695278,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : -13.997879764130023,
+      "jsonValue" : null,
+      "key" : "latitude",
+      "lastUpdateTs" : 1758631584192,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : -73.26782226562501,
       "jsonValue" : null,
       "key" : "longitude",
-      "lastUpdateTs" : 1756480696690,
+      "lastUpdateTs" : 1758631584192,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "statusBrakerState",
+      "lastUpdateTs" : 1758648713260,
+      "longValue" : 0,
+      "strValue" : null
+    }, {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "statusBrakerStateGCB",
+      "lastUpdateTs" : 1759272695278,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "statusBrakerStateMCB",
+      "lastUpdateTs" : 1759272695278,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -102,9 +721,25 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "statusControllerMode",
-      "lastUpdateTs" : 1757783878846,
+      "lastUpdateTs" : 1759272695306,
       "longValue" : null,
-      "strValue" : "STOP"
+      "strValue" : "MAN"
+    }, {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "updateStatusBrakerStateGCB",
+      "lastUpdateTs" : 1758645193972,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "updateStatusBrakerStateMCB",
+      "lastUpdateTs" : 1758645193972,
+      "longValue" : null,
+      "strValue" : null
     } ]
   },
   "calculatedFields" : [ ]
