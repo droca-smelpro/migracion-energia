@@ -17625,25 +17625,15 @@
     "assignedCustomers" : [ {
       "customerId" : {
         "entityType" : "CUSTOMER",
-        "id" : "fa918da0-90c7-11f0-94f7-e3430df9a4b8"
-      },
-      "title" : "Cliente",
-      "public" : false
-    }, {
-      "customerId" : {
-        "entityType" : "CUSTOMER",
         "id" : "a7537230-90cb-11f0-94f7-e3430df9a4b8"
       },
       "title" : "Cliente",
       "public" : false
     } ],
-    "externalId" : {
-      "entityType" : "DASHBOARD",
-      "id" : "f5471960-7f64-11f0-a61c-01e0c85fd5dd"
-    },
+    "externalId" : null,
     "id" : {
       "entityType" : "DASHBOARD",
-      "id" : "f5471960-7f64-11f0-a61c-01e0c85fd5dd"
+      "id" : "ce0b34c0-9edc-11f0-a80a-d12bdf692708"
     }
   },
   "relations" : [ ],

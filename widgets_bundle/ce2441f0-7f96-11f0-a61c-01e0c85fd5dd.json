@@ -17,7 +17,7 @@
     "scada" : false,
     "title" : "Widgets del Proyecto"
   },
-  "fqns" : [ "lastest_values_table", "control" ],
+  "fqns" : [ "lastest_values_table", "control", "double_mode" ],
   "relations" : [ ],
   "attributes" : {
     "SERVER_SCOPE" : [ ]

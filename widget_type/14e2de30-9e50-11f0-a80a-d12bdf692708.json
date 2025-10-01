@@ -1,0 +1,46 @@
+{
+  "entityType" : "WIDGET_TYPE",
+  "entity" : {
+    "fqn" : "double_mode",
+    "name" : "double mode",
+    "deprecated" : false,
+    "image" : null,
+    "description" : null,
+    "descriptor" : {
+      "type" : "latest",
+      "sizeX" : 7.5,
+      "sizeY" : 3,
+      "resources" : [ ],
+      "templateHtml" : "<div class=\"main-layout flex flex-col\" style=\"width: 100%; height: 100%;\">\r\n  \r\n  <!-- Title -->\r\n  <div style=\"display:flex; justify-content:space-between; align-items:center; margin-bottom:0px;\">\r\n    <div id=\"dynamic-title\" class=\"title\">Vehiculo: - | NIA: - | -</div>\r\n  </div>\r\n\r\n  <!-- Dashboard States -->\r\n  <div id=\"stateA\" class=\"flex-1\" style=\"width:100%; height:100%; display:none;\">\r\n    <tb-dashboard-state id=\"tbStateA\" [ctx]=\"ctx\" stateId=\"all_map\"></tb-dashboard-state>\r\n  </div>\r\n\r\n  <div id=\"stateB\" class=\"flex-1\" style=\"width:100%; height:100%; display:none;\">\r\n    <tb-dashboard-state id=\"tbStateB\" [ctx]=\"ctx\" stateId=\"individual_map\"></tb-dashboard-state>\r\n  </div>\r\n\r\n</div>\r\n",
+      "templateCss" : ".title {\r\n    padding: 15px 0px 4px 16px;\r\n    font-weight: 700;\r\n    font-size: 24px;\r\n}\r\n\r\n.toggle-group {\r\n  display: inline-flex;\r\n  background: #f0f0f0;\r\n  border-radius: 25px;\r\n  padding: 2px;\r\n  margin-top: 4px;\r\n}\r\n\r\n.toggle-btn {\r\n  background: transparent;\r\n  color: #8f8f8f;\r\n  border: none;\r\n  padding: 6px 18px;\r\n  cursor: pointer;\r\n  border-radius: 25px;\r\n  transition: background 0.2s, color 0.2s;\r\n  font-size: 14px;\r\n}\r\n\r\n.toggle-btn.active {\r\n  background: #0063a9;\r\n  color: white;\r\n  font-weight: bold;\r\n}\r\n\r\n.toggle-btn:not(.active):hover {\r\n  background: #e7e7e7;\r\n}\r\n",
+      "controllerScript" : "self.onInit = function() {\r\n    console.log(self.ctx.defaultSubscription.datasources);\r\n    \r\n    var stateA = document.getElementById(\"stateA\");\r\n    var stateB = document.getElementById(\"stateB\");\r\n    var titleEl = document.getElementById(\"dynamic-title\");\r\n\r\n    function showState(showEl, hideEl) {\r\n        showEl.style.display = \"block\";\r\n        hideEl.style.display = \"none\";\r\n    }\r\n\r\n    // --- Decide initial state based on datasource ---\r\n    function autoToggleByEntityType() {\r\n        let datasources = self.ctx.defaultSubscription.datasources || [];\r\n        let selectedEntity = datasources.find(ds => ds.aliasName === \"Selected Entity\");\r\n        let selectedEntityType = \"None\";\r\n        \r\n        if (selectedEntity) {\r\n            selectedEntityType = selectedEntity.entityType;\r\n        }\r\n        \r\n        console.log(\"selected:\");\r\n        console.log(selectedEntityType);\r\n\r\n        if (selectedEntityType === \"DEVICE\") {\r\n            // DEVICE → show State B\r\n            showState(stateB, stateA);\r\n            updateTitle(\"B\", selectedEntity);\r\n        } else {\r\n            // ASSET, missing, or anything else → show State A\r\n            showState(stateA, stateB);\r\n            updateTitle(\"A\", selectedEntity);\r\n        }\r\n    }\r\n\r\n    // --- Title update depending on state ---\r\n    function updateTitle(state, selectedEntity) {\r\n        if (state === \"A\") {\r\n            titleEl.innerText = \"Ubicaciónes\";\r\n        } else if (state === \"B\" && selectedEntity) {\r\n            titleEl.innerText = selectedEntity.entityLabel || selectedEntity.entityName || \"-\";\r\n        }\r\n    }\r\n\r\n    autoToggleByEntityType();\r\n};\r\n\r\nself.onDataUpdated = function() {\r\n    console.log(\"data updated\");\r\n};\r\n",
+      "settingsForm" : [ {
+        "id" : "state_a_tag",
+        "name" : "State 1 Tag",
+        "group" : "state_tags",
+        "type" : "text",
+        "required" : true
+      }, {
+        "id" : "state_b_tag",
+        "name" : "State 2 Tag",
+        "group" : "state_tags",
+        "type" : "text",
+        "required" : true
+      } ],
+      "settingsDirective" : "",
+      "defaultConfig" : "{\"showTitle\":false,\"backgroundColor\":\"rgb(255, 255, 255)\",\"color\":\"rgba(0, 0, 0, 0.87)\",\"padding\":\"0px\",\"settings\":{\"cardHtml\":\"<div class='card'>HTML code here</div>\",\"cardCss\":\".card {\\n    font-weight: bold;\\n    font-size: 32px;\\n    color: #999;\\n    width: 100%;\\n    height: 100%;\\n    display: flex;\\n    align-items: center;\\n    justify-content: center;\\n}\"},\"title\":\"HTML Card\",\"dropShadow\":true,\"enableFullscreen\":false,\"widgetStyle\":{},\"widgetCss\":\"\",\"pageSize\":1024,\"noDataDisplayMessage\":\"\",\"datasources\":[],\"timewindow\":{\"realtime\":{\"timewindowMs\":60000}}}"
+    },
+    "externalId" : null,
+    "resources" : null,
+    "id" : {
+      "entityType" : "WIDGET_TYPE",
+      "id" : "14e2de30-9e50-11f0-a80a-d12bdf692708"
+    },
+    "scada" : false,
+    "tags" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}

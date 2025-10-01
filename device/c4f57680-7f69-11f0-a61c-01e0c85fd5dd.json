@@ -32,7 +32,7 @@
       "id" : "c4f57680-7f69-11f0-a61c-01e0c85fd5dd"
     },
     "label" : "Chalcobamba - Cuzco",
-    "name" : "GEF08",
+    "name" : "GE03",
     "softwareId" : null,
     "type" : "electric generator"
   },
@@ -64,8 +64,8 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1759272650256,
-      "longValue" : 1759272648951,
+      "lastUpdateTs" : 1759333196246,
+      "longValue" : 1759333195759,
       "strValue" : null
     }, {
       "booleanValue" : null,
@@ -89,7 +89,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Actualización sistema LS5",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -97,7 +97,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Actualización sistema easYgen",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -153,7 +153,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Alarma clase A enclavada",
-      "lastUpdateTs" : 1759272695281,
+      "lastUpdateTs" : 1759333182150,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -161,7 +161,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Alarma clase B enclavada",
-      "lastUpdateTs" : 1759272695281,
+      "lastUpdateTs" : 1759333182150,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -169,7 +169,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Alarma clase C enclavada",
-      "lastUpdateTs" : 1759272695281,
+      "lastUpdateTs" : 1759333182150,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -177,7 +177,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Alarma clase D enclavada",
-      "lastUpdateTs" : 1759272695281,
+      "lastUpdateTs" : 1759333182150,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -185,7 +185,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Alarma clase E enclavada",
-      "lastUpdateTs" : 1759272695281,
+      "lastUpdateTs" : 1759333182150,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -193,7 +193,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Alarma clase F enclavada",
-      "lastUpdateTs" : 1759272695281,
+      "lastUpdateTs" : 1759333182150,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -201,7 +201,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Cableado AC Barra 1",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -209,7 +209,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Cableado AC Generador",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -217,7 +217,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Cableado AC Red",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -225,7 +225,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Desacoplamiento red",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -233,7 +233,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Desacoplamiento red enclavado",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -241,7 +241,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Desajuste rotación fases barra enclavado",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -249,7 +249,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Desajuste rotación fases red",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -257,7 +257,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Desajuste rotación fases red enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -265,7 +265,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Desfase red",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -273,7 +273,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Desfase red enclavado",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -281,7 +281,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Fallo GGB al abrir enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -289,7 +289,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Fallo GGB al cerrar enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -297,7 +297,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Falta LS5",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -305,7 +305,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Falta easYgen",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -313,7 +313,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Generador baja frecuencia 1 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -321,7 +321,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Generador baja frecuencia 2 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -329,7 +329,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Generador sobre frecuencia 1 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -337,7 +337,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Generador sobre frecuencia 2 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -345,7 +345,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Generador sobrecorriente 1 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -353,7 +353,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Generador sobrecorriente 2 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -361,7 +361,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Generador sobrecorriente 3 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -369,7 +369,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Generador sobretensión 1 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -377,7 +377,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Generador sobretensión 2 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -385,7 +385,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Generador subtensión 1 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -393,7 +393,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Generador subtensión 2 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -401,7 +401,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Potencia inversa / reducida 1 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -409,7 +409,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Potencia inversa / reducida 2 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -417,7 +417,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Pérdida de paso (pole slip)",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -425,7 +425,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red baja frecuencia 1",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -433,7 +433,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red baja frecuencia 1 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -441,7 +441,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red baja frecuencia 2",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -449,7 +449,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red baja frecuencia 2 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -457,7 +457,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red sobre frecuencia 1",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -465,7 +465,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red sobre frecuencia 1 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -473,7 +473,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red sobre frecuencia 2",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -481,7 +481,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red sobre frecuencia 2 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -489,7 +489,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red sobretensión 1",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -497,7 +497,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red sobretensión 1 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -505,7 +505,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red sobretensión 2",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -513,7 +513,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red sobretensión 2 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -521,7 +521,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red subtensión 1",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -529,7 +529,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red subtensión 1 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -537,7 +537,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red subtensión 2",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -545,7 +545,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Red subtensión 2 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -553,7 +553,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Ruptura cable temperatura cilindro",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -561,7 +561,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Sobrecarga generador IOP 1 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -569,7 +569,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Sobrecarga generador IOP 2 enclavada",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -577,7 +577,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Temperatura cilindro nivel 1",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -585,7 +585,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "Temperatura cilindro nivel 2",
-      "lastUpdateTs" : 1759272641299,
+      "lastUpdateTs" : 1759333187978,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -673,7 +673,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "emergencyModeActive",
-      "lastUpdateTs" : 1759272695278,
+      "lastUpdateTs" : 1759333182145,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -705,7 +705,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "statusBrakerStateGCB",
-      "lastUpdateTs" : 1759272695278,
+      "lastUpdateTs" : 1759333182145,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -713,7 +713,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "statusBrakerStateMCB",
-      "lastUpdateTs" : 1759272695278,
+      "lastUpdateTs" : 1759333182145,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -721,7 +721,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "statusControllerMode",
-      "lastUpdateTs" : 1759272695306,
+      "lastUpdateTs" : 1759333182162,
       "longValue" : null,
       "strValue" : "MAN"
     }, {
