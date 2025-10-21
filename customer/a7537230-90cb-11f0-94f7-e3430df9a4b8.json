@@ -16,10 +16,10 @@
       "entityType" : "CUSTOMER",
       "id" : "a7537230-90cb-11f0-94f7-e3430df9a4b8"
     },
-    "name" : "Cliente",
+    "name" : "Usuarios",
     "phone" : null,
     "state" : null,
-    "title" : "Cliente",
+    "title" : "Usuarios",
     "zip" : null
   },
   "relations" : [ ],

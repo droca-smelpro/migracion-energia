@@ -31,8 +31,8 @@
       "entityType" : "DEVICE",
       "id" : "bce95fb0-7f69-11f0-a61c-01e0c85fd5dd"
     },
-    "label" : "LA ARENA 100KW",
-    "name" : "GE04",
+    "label" : "Chalcobamba - Cuzco - 1500 ",
+    "name" : "GEN02",
     "softwareId" : null,
     "type" : "electric generator"
   },
@@ -86,18 +86,26 @@
     } ],
     "SHARED_SCOPE" : [ {
       "booleanValue" : null,
-      "doubleValue" : -12.07331805721944,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "controller",
+      "lastUpdateTs" : 1760537333819,
+      "longValue" : null,
+      "strValue" : "EasyGen 3200"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : -12.073252295684155,
       "jsonValue" : null,
       "key" : "latitude",
-      "lastUpdateTs" : 1758714886103,
+      "lastUpdateTs" : 1760537333819,
       "longValue" : null,
       "strValue" : null
     }, {
       "booleanValue" : null,
-      "doubleValue" : -76.97924814696643,
+      "doubleValue" : -76.97920560836793,
       "jsonValue" : null,
       "key" : "longitude",
-      "lastUpdateTs" : 1758714886103,
+      "lastUpdateTs" : 1760537333819,
       "longValue" : null,
       "strValue" : null
     }, {

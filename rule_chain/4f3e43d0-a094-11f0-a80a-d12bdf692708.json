@@ -9,13 +9,13 @@
     "externalId" : null,
     "firstRuleNodeId" : {
       "entityType" : "RULE_NODE",
-      "id" : "f1220c10-9d45-11f0-a80a-d12bdf692708"
+      "id" : "6e065c80-a094-11f0-a80a-d12bdf692708"
     },
     "id" : {
       "entityType" : "RULE_CHAIN",
-      "id" : "22d27ed0-9d45-11f0-a80a-d12bdf692708"
+      "id" : "4f3e43d0-a094-11f0-a80a-d12bdf692708"
     },
-    "name" : "Remap InteliGen3-200",
+    "name" : "Remap InteliLite 4",
     "root" : false,
     "type" : "CORE"
   },
@@ -53,82 +53,41 @@
     "nodes" : [ {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 296,
-        "layoutY" : 151
-      },
-      "configuration" : {
-        "renameIn" : "DATA",
-        "renameKeysMapping" : {
-          "gen_kw" : "generatorP",
-          "gen_kw_l1" : "generatorPL1",
-          "gen_kw_l2" : "generatorPL2",
-          "gen_kw_l3" : "generatorPL3",
-          "gen_kva" : "generatorQ",
-          "gen_kva_l1" : "generatorQL1",
-          "gen_kva_l2" : "generatorQL2",
-          "gen_kva_l3" : "generatorQL3",
-          "gen_kva_1" : "generatorS",
-          "gen_kva_l1_1" : "generatorSL1",
-          "gen_kva_l2_1" : "generatorSL2",
-          "gen_kva_l3_1" : "generatorSL3",
-          "gen_pow_fac" : "generatorPowerFactor",
-          "gen_pow_fa_l1" : "generatorPowerFactorL1",
-          "gen_pow_fa_l2" : "generatorPowerFactorL2",
-          "gen_pow_fa_l3" : "generatorPowerFactorL3",
-          "gen_fre" : "generatorFrequency",
-          "gen_vol_l1-n" : "generatorVoltageL1N",
-          "gen_vol_l2-n" : "generatorVoltageL2N",
-          "gen_vol_l3-n" : "generatorVoltageL1N",
-          "gen_vol_l1-l2" : "generatorVoltageL1L2",
-          "gen_vol_l2-l3" : "generatorVoltageL2L3",
-          "gen_vol_l3-l1" : "generatorVoltageL3L1",
-          "gen_cur_l1" : "generatorCurrentL1",
-          "gen_cur_l2" : "generatorCurrentL2",
-          "gen_cur_l3" : "generatorCurrentL3",
-          "ear_fau_cur" : "generatorEarthFaultCurrent",
-          "gen_kwh_kwh" : "generatorGensetKWh",
-          "gen_kva_kva" : "generatorGensetKVArh"
-        }
-      },
-      "configurationVersion" : 2,
-      "createdTime" : 0,
-      "debugSettings" : {
-        "allEnabled" : false,
-        "allEnabledUntil" : 1759343174778,
-        "failuresEnabled" : false
-      },
-      "externalId" : null,
-      "id" : {
-        "entityType" : "RULE_NODE",
-        "id" : "f1220c10-9d45-11f0-a80a-d12bdf692708"
-      },
-      "name" : "Generator",
-      "queueName" : null,
-      "ruleChainId" : null,
-      "singletonMode" : false,
-      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
-    }, {
-      "additionalInfo" : {
-        "description" : "",
-        "layoutX" : 608,
+        "layoutX" : 316,
         "layoutY" : 149
       },
       "configuration" : {
         "renameIn" : "DATA",
         "renameKeysMapping" : {
-          "mai_bus_fre" : "mainsFrequency",
-          "mai_bus_l1-n" : "mainsVoltageL1N",
-          "mai_bus_l2-n" : "mainsVoltageL2N",
-          "mai_bus_l3-n" : "mainsVoltageL3N",
-          "mai_bus_l1-l2" : "mainsVoltageL1L2",
-          "mai_bus_l2-l3" : "mainsVoltageL2L3",
-          "mai_bus_l3-l1" : "mainsVoltageL3L1",
-          "mai_cur_l1" : "mainsL1Current",
-          "mai_imp_kw" : "mainsImportP",
-          "mai_imp_kva" : "mainsImportQ",
-          "mai_pf" : "mainsPowerFactor",
-          "mai_kwh_kwh" : "mainsVoltageAvgLN",
-          "mai_kva_kva" : "mainsVoltageAvgLL"
+          "loa_p" : "generatorP",
+          "loa_p_l1" : "generatorPL1",
+          "loa_p_l2" : "generatorPL2",
+          "loa_p_l3" : "generatorPL3",
+          "loa_q" : "generatorQ",
+          "loa_q_l1" : "generatorQL1",
+          "loa_q_l2" : "generatorQL2",
+          "loa_q_l3" : "generatorQL3",
+          "loa_s" : "generatorS",
+          "loa_s_l1" : "generatorSL1",
+          "loa_s_l2" : "generatorSL2",
+          "loa_s_l3" : "generatorSL3",
+          "loa_pow_fac" : "generatorPowerFactor",
+          "loa_pow_fa_l1" : "generatorPowerFactorL1",
+          "loa_pow_fa_l2" : "generatorPowerFactorL2",
+          "loa_pow_fa_l3" : "generatorPowerFactorL3",
+          "gen_fre" : "generatorFrequency",
+          "gen_vol_l1n" : "generatorVoltageL1N",
+          "gen_vol_l2n" : "generatorVoltageL2N",
+          "gen_vol_l3n" : "generatorVoltageL1N",
+          "gen_vol_l1l2" : "generatorVoltageL1L2",
+          "gen_vol_l2l3" : "generatorVoltageL2L3",
+          "gen_vol_l3l1" : "generatorVoltageL3L1",
+          "loa_cur_l1" : "generatorCurrentL1",
+          "loa_cur_l2" : "generatorCurrentL2",
+          "loa_cur_l3" : "generatorCurrentL3",
+          "ear_fau_cur" : "generatorEarthFaultCurrent",
+          "gen_kwh_kwh" : "generatorGensetKWh",
+          "gen_kva_kva" : "generatorGensetKVArh"
         }
       },
       "configurationVersion" : 2,
@@ -141,7 +100,42 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "f1220c11-9d45-11f0-a80a-d12bdf692708"
+        "id" : "6e065c80-a094-11f0-a80a-d12bdf692708"
+      },
+      "name" : "Generator",
+      "queueName" : null,
+      "ruleChainId" : null,
+      "singletonMode" : false,
+      "type" : "org.thingsboard.rule.engine.transform.TbRenameKeysNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 626,
+        "layoutY" : 141
+      },
+      "configuration" : {
+        "renameIn" : "DATA",
+        "renameKeysMapping" : {
+          "mai_fre" : "mainsFrequency",
+          "mai_vol_l1n" : "mainsVoltageL1N",
+          "mai_vol_l2n" : "mainsVoltageL2N",
+          "mai_vol_l3n" : "mainsVoltageL3N",
+          "mai_vol_l1l2" : "mainsVoltageL1L2",
+          "mai_vol_l2l3" : "mainsVoltageL2L3",
+          "mai_vol_l3l1" : "mainsVoltageL3L1"
+        }
+      },
+      "configurationVersion" : 2,
+      "createdTime" : 0,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 0,
+        "failuresEnabled" : false
+      },
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "6e068390-a094-11f0-a80a-d12bdf692708"
       },
       "name" : "Mains",
       "queueName" : null,
@@ -151,8 +145,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 919,
-        "layoutY" : 146
+        "layoutX" : 985,
+        "layoutY" : 138
       },
       "configuration" : {
         "renameIn" : "DATA",
@@ -180,7 +174,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "f1220c12-9d45-11f0-a80a-d12bdf692708"
+        "id" : "6e068391-a094-11f0-a80a-d12bdf692708"
       },
       "name" : "Load/System",
       "queueName" : null,
@@ -190,8 +184,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 57,
-        "layoutY" : 306
+        "layoutX" : 59,
+        "layoutY" : 294
       },
       "configuration" : {
         "renameIn" : "DATA",
@@ -234,13 +228,13 @@
       "createdTime" : 0,
       "debugSettings" : {
         "allEnabled" : false,
-        "allEnabledUntil" : 1759353122550,
+        "allEnabledUntil" : 0,
         "failuresEnabled" : false
       },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "f1223320-9d45-11f0-a80a-d12bdf692708"
+        "id" : "6e068392-a094-11f0-a80a-d12bdf692708"
       },
       "name" : "Engine/ECU",
       "queueName" : null,
@@ -250,19 +244,23 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 661,
-        "layoutY" : 312
+        "layoutX" : 720,
+        "layoutY" : 299
       },
       "configuration" : {
         "version" : 0
       },
       "configurationVersion" : 0,
       "createdTime" : 0,
-      "debugSettings" : null,
+      "debugSettings" : {
+        "allEnabled" : false,
+        "allEnabledUntil" : 1759527167217,
+        "failuresEnabled" : false
+      },
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "09266c70-9d46-11f0-a80a-d12bdf692708"
+        "id" : "6e068393-a094-11f0-a80a-d12bdf692708"
       },
       "name" : "Output",
       "queueName" : null,
@@ -272,8 +270,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 332,
-        "layoutY" : 307
+        "layoutX" : 365,
+        "layoutY" : 300
       },
       "configuration" : {
         "renameIn" : "DATA",
@@ -293,7 +291,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "4498fbb0-9d4b-11f0-a80a-d12bdf692708"
+        "id" : "6e06aaa0-a094-11f0-a80a-d12bdf692708"
       },
       "name" : "Status",
       "queueName" : null,
@@ -303,8 +301,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 969,
-        "layoutY" : 398
+        "layoutX" : 1025,
+        "layoutY" : 394
       },
       "configuration" : {
         "processingSettings" : {
@@ -325,7 +323,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "001c3700-9d7c-11f0-a80a-d12bdf692708"
+        "id" : "6e06d1b0-a094-11f0-a80a-d12bdf692708"
       },
       "name" : "Save as atrributes",
       "queueName" : null,
@@ -335,8 +333,8 @@
     }, {
       "additionalInfo" : {
         "description" : "",
-        "layoutX" : 659,
-        "layoutY" : 398
+        "layoutX" : 726,
+        "layoutY" : 381
       },
       "configuration" : {
         "scriptLang" : "TBEL",
@@ -353,7 +351,7 @@
       "externalId" : null,
       "id" : {
         "entityType" : "RULE_NODE",
-        "id" : "001c5e10-9d7c-11f0-a80a-d12bdf692708"
+        "id" : "6e06f8c0-a094-11f0-a80a-d12bdf692708"
       },
       "name" : "Filter data for attributes",
       "queueName" : null,

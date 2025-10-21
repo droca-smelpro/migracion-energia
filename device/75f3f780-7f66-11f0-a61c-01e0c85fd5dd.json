@@ -31,8 +31,8 @@
       "entityType" : "DEVICE",
       "id" : "75f3f780-7f66-11f0-a61c-01e0c85fd5dd"
     },
-    "label" : "AESA -  ICA",
-    "name" : "GE05",
+    "label" : "AESA - ICA",
+    "name" : "GEP28",
     "softwareId" : null,
     "type" : "electric generator"
   },
@@ -94,18 +94,26 @@
       "strValue" : "MAN"
     }, {
       "booleanValue" : null,
-      "doubleValue" : -12.074525260979668,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "controller",
+      "lastUpdateTs" : 1760130443869,
+      "longValue" : null,
+      "strValue" : "InteliGen4 200"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : -12.074322429076295,
       "jsonValue" : null,
       "key" : "latitude",
-      "lastUpdateTs" : 1756479789674,
+      "lastUpdateTs" : 1760737673097,
       "longValue" : null,
       "strValue" : null
     }, {
       "booleanValue" : null,
-      "doubleValue" : -76.97745337419524,
+      "doubleValue" : -76.97740316390991,
       "jsonValue" : null,
       "key" : "longitude",
-      "lastUpdateTs" : 1756479789674,
+      "lastUpdateTs" : 1760737673097,
       "longValue" : null,
       "strValue" : null
     }, {

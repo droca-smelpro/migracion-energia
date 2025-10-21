@@ -31,8 +31,8 @@
       "entityType" : "DEVICE",
       "id" : "dce08280-7f69-11f0-a61c-01e0c85fd5dd"
     },
-    "label" : "AESA - ICA",
-    "name" : "GE01",
+    "label" : "TUMI",
+    "name" : "GEN12",
     "softwareId" : null,
     "type" : "electric generator"
   },
@@ -48,7 +48,7 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "active",
-      "lastUpdateTs" : 1759082351163,
+      "lastUpdateTs" : 1760525716313,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -56,57 +56,105 @@
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "inactivityAlarmTime",
-      "lastUpdateTs" : 1759082351163,
-      "longValue" : 1759082351163,
+      "lastUpdateTs" : 1760525716312,
+      "longValue" : 1760525716312,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastActivityTime",
-      "lastUpdateTs" : 1759081694249,
-      "longValue" : 1759081692687,
+      "lastUpdateTs" : 1760525063259,
+      "longValue" : 1760525060245,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastConnectTime",
-      "lastUpdateTs" : 1759077419694,
-      "longValue" : 1759077419694,
+      "lastUpdateTs" : 1760490637527,
+      "longValue" : 1760490637527,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
       "jsonValue" : null,
       "key" : "lastDisconnectTime",
-      "lastUpdateTs" : 1759081692712,
-      "longValue" : 1759081692712,
+      "lastUpdateTs" : 1760525060267,
+      "longValue" : 1760525060267,
       "strValue" : null
     } ],
     "SHARED_SCOPE" : [ {
       "booleanValue" : null,
-      "doubleValue" : -15.362335261708438,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "controller",
+      "lastUpdateTs" : 1759357496554,
+      "longValue" : null,
+      "strValue" : "InteliLite4"
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : -10.580571089379893,
       "jsonValue" : null,
       "key" : "latitude",
-      "lastUpdateTs" : 1758822556146,
+      "lastUpdateTs" : 1759357496554,
       "longValue" : null,
       "strValue" : null
     }, {
       "booleanValue" : null,
-      "doubleValue" : -75.16827655544434,
+      "doubleValue" : -76.76686048507692,
       "jsonValue" : null,
       "key" : "longitude",
-      "lastUpdateTs" : 1758822556146,
+      "lastUpdateTs" : 1759357496554,
       "longValue" : null,
       "strValue" : null
     }, {
       "booleanValue" : null,
       "doubleValue" : null,
-      "jsonValue" : "[{\"data_request\":\"010601F7000039C4\"},{\"data_request\":\"010601F7000039C4\"}]",
-      "key" : "rpc_sequence",
-      "lastUpdateTs" : 1757449344289,
+      "jsonValue" : "[{\"data_request\":\"0110106F00030608F700000001B493\"}]",
+      "key" : "rpc_fault_reset",
+      "lastUpdateTs" : 1759440652743,
       "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "[{\"data_request\":\"0110106F00030604FB00000001A45E\"}]",
+      "key" : "rpc_horn_reset",
+      "lastUpdateTs" : 1759440697606,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "[{\"data_request\":\"0110106F00030601FE00000001680B\"}]",
+      "key" : "rpc_start",
+      "lastUpdateTs" : 1759440560555,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "[{\"data_request\":\"0110106F00030602FD000000012C38\"}]",
+      "key" : "rpc_stop",
+      "lastUpdateTs" : 1759440603137,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "statusBrakerState",
+      "lastUpdateTs" : 1760524397290,
+      "longValue" : 1,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "statusControllerMode",
+      "lastUpdateTs" : 1760524398519,
+      "longValue" : 1,
       "strValue" : null
     } ]
   },

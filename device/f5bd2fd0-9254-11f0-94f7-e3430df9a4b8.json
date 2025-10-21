@@ -20,7 +20,7 @@
     },
     "deviceProfileId" : {
       "entityType" : "DEVICE_PROFILE",
-      "id" : "c205e9f0-7f64-11f0-a61c-01e0c85fd5dd"
+      "id" : "5fd98570-7f69-11f0-a61c-01e0c85fd5dd"
     },
     "externalId" : null,
     "firmwareId" : null,
@@ -28,10 +28,10 @@
       "entityType" : "DEVICE",
       "id" : "f5bd2fd0-9254-11f0-94f7-e3430df9a4b8"
     },
-    "label" : "",
-    "name" : "Electra",
+    "label" : "Descripción",
+    "name" : "GEP22",
     "softwareId" : null,
-    "type" : "default"
+    "type" : "electric generator"
   },
   "credentials" : {
     "credentialsId" : "0vcDs4PbPzPcSL3NfnDv",
@@ -81,7 +81,15 @@
       "longValue" : 1758817658913,
       "strValue" : null
     } ],
-    "SHARED_SCOPE" : [ ]
+    "SHARED_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "controller",
+      "lastUpdateTs" : 1759357837670,
+      "longValue" : null,
+      "strValue" : "InteliGen4 200"
+    } ]
   },
   "calculatedFields" : [ ]
 }

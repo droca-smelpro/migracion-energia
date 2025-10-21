@@ -8,7 +8,7 @@
     "configuration" : {
       "description" : "",
       "widgets" : {
-        "6092e31e-a9b7-7a25-a026-dc7ccb105df4" : {
+        "6b57e3eb-117a-390c-778f-8c94049596b1" : {
           "typeFullFqn" : "system.cards.entities_table",
           "type" : "latest",
           "sizeX" : 7.5,
@@ -50,7 +50,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "4px",
             "settings" : {
-              "entitiesTitle" : "Usuarios",
+              "entitiesTitle" : "Administradores",
               "enableSearch" : true,
               "enableSelectColumnDisplay" : true,
               "enableStickyHeader" : true,
@@ -85,42 +85,59 @@
               "type" : "entity",
               "name" : "",
               "entityAliasId" : "66648982-96c8-3140-1f78-86564ffbea8c",
-              "filterId" : "e1647e6f-faae-00bb-4008-6163a5163284",
+              "filterId" : "e8ae092f-7398-6244-cfe4-37c73fc9dfd8",
               "dataKeys" : [ {
-                "name" : "name",
-                "type" : "entityField",
-                "label" : "Name",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.7466669558570668
-              }, {
                 "name" : "email",
                 "type" : "entityField",
-                "label" : "Email",
+                "label" : "Usuario",
                 "color" : "#4caf50",
                 "settings" : { },
-                "_hash" : 0.2994408019546888
+                "_hash" : 0.2994408019546888,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "firstName",
                 "type" : "entityField",
-                "label" : "First name",
+                "label" : "Nombre",
                 "color" : "#ffc107",
                 "settings" : { },
-                "_hash" : 0.8774543295177568
+                "_hash" : 0.8774543295177568,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "lastName",
                 "type" : "entityField",
-                "label" : "Last name",
+                "label" : "Apellido",
                 "color" : "#607d8b",
                 "settings" : { },
-                "_hash" : 0.5894745228836846
+                "_hash" : 0.5894745228836846,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "phone",
                 "type" : "entityField",
-                "label" : "Phone",
+                "label" : "Celular",
                 "color" : "#607d8b",
                 "settings" : { },
-                "_hash" : 0.6730739369191564
+                "_hash" : 0.6730739369191564,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -130,27 +147,25 @@
             "configMode" : "advanced",
             "actions" : {
               "actionCellButton" : [ {
-                "name" : "edit",
-                "icon" : "edit",
+                "name" : "Copiar link de activación",
+                "icon" : "link",
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
-                "type" : "updateDashboardState",
-                "targetDashboardStateId" : null,
-                "openRightLayout" : false,
-                "setEntityId" : true,
-                "stateEntityParamName" : null,
-                "id" : "3b218466-4cd8-b175-5a3f-9c0334fe54cb"
+                "type" : "custom",
+                "customFunction" : "widgetContext.userService.getActivationLink(entityId.id).subscribe({\r\n  next: (link) => {\r\n    // 1. Copy to clipboard\r\n    navigator.clipboard.writeText(link).then(() => {\r\n      // 2. Show success toast\r\n      widgetContext.showSuccessToast(`Activation link copied: ${link}`);\r\n    }).catch(err => {\r\n      console.error('Clipboard copy failed', err);\r\n    });\r\n  },\r\n  error: (err) => {\r\n    console.error('Error fetching activation link:', err);\r\n  }\r\n});\r\n",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "d728025f-4ac6-b45c-eff9-0f8f3a6a1ca2"
               }, {
-                "name" : "dlelete",
-                "icon" : "delete",
+                "name" : "Enviar link de activación",
+                "icon" : "mdi:email-arrow-right",
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
-                "type" : "updateDashboardState",
-                "targetDashboardStateId" : null,
-                "openRightLayout" : false,
-                "setEntityId" : true,
-                "stateEntityParamName" : null,
-                "id" : "214894b0-11a5-f87f-f000-90003cdd316a"
+                "type" : "custom",
+                "customFunction" : "widgetContext.userService.sendActivationEmail(additionalParams.entity.Usuario).subscribe({\r\n  next: () => {\r\n    widgetContext.showSuccessToast(`Activation email sent to ${additionalParams.entity.Email}`);\r\n  },\r\n  error: (err) => {\r\n    console.error('Error sending activation email:', err);\r\n  }\r\n});\r\n",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "da83abdc-f87d-4f9b-857a-07cbd709b6f6"
               } ],
               "headerButton" : [ {
                 "name" : "add user",
@@ -162,7 +177,7 @@
                 "type" : "customPretty",
                 "customHtml" : "<form #addUserForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\" (ngSubmit)=\"save()\" class=\"add-user-form\">\r\n\r\n    <mat-toolbar color=\"primary\">\r\n        <h2>Registrar Usuario</h2>\r\n        <span class=\"flex-1\"></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon>close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n\r\n    <div mat-dialog-content style=\"padding: 24px;\">\r\n        <mat-form-field appearance=\"fill\" class=\"mat-block\" style=\"width: 100%;\">\r\n            <mat-label>Email</mat-label>\r\n            <input matInput formControlName=\"email\" required>\r\n            <mat-error *ngIf=\"addEntityFormGroup.get('email').hasError('required')\">\r\n                Campo obligatorio.\r\n            </mat-error>\r\n        </mat-form-field>\r\n\r\n        <mat-form-field appearance=\"fill\" class=\"mat-block\" style=\"width: 100%;\">\r\n            <mat-label>Nombre</mat-label>\r\n            <input matInput formControlName=\"firstName\">\r\n        </mat-form-field>\r\n\r\n        <mat-form-field appearance=\"fill\" class=\"mat-block\" style=\"width: 100%;\">\r\n            <mat-label>Apellido</mat-label>\r\n            <input matInput formControlName=\"lastName\">\r\n        </mat-form-field>\r\n    </div>\r\n\r\n    <mat-divider style=\"width: 100%;\"></mat-divider>\r\n\r\n    <div mat-dialog-actions style=\"padding: 8px;\" class=\"flex flex-row justify-end\">\r\n        <button mat-button type=\"button\" (click)=\"cancel()\">Cancelar</button>\r\n        <button mat-raised-button color=\"primary\" type=\"submit\"\r\n                [disabled]=\"addUserForm.invalid || (isLoading$ | async)\">\r\n            Crear\r\n        </button>\r\n    </div>\r\n</form>\r\n",
                 "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
-                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\nlet userService = $injector.get(widgetContext.servicesMap.get('userService'));\r\n\r\nopenAddUserDialog();\r\n\r\nfunction openAddUserDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddUserDialogController).subscribe();\r\n}\r\n\r\nfunction AddUserDialogController(instance) {\r\n    let vm = instance;\r\n\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n        email: ['', [vm.validators.required, vm.validators.email]],\r\n        firstName: [''],\r\n        lastName: ['']\r\n    });\r\n\r\n    vm.cancel = function () {\r\n        vm.dialogRef.close(null);\r\n    };\r\n\r\n    vm.save = function () {\r\n        vm.addEntityFormGroup.markAsPristine();\r\n\r\n        const formValues = vm.addEntityFormGroup.value;\r\n\r\n        // ID del cliente \"Usuarios\", debe ser hardcoded (ajusta este ID real desde tu plataforma)\r\n        const customerId = {\r\n            entityType: 'CUSTOMER',\r\n            id: 'c9a39b70-7317-11f0-9e5f-db09c3cbe3c9'  // <- AJUSTA ESTE ID A TU CASO\r\n        };\r\n\r\n        const tenantId = {\r\n            entityType: 'TENANT',\r\n            id: widgetContext.currentUser.userId\r\n        };\r\n        //const tenantId = widgetContext.currentUser.user.tenantId;\r\n\r\n        const user = {\r\n            email: formValues.email,\r\n            firstName: formValues.firstName,\r\n            lastName: formValues.lastName,\r\n            authority: 'CUSTOMER_USER',\r\n            customerId,\r\n            tenantId,\r\n            additionalInfo: {\r\n                description: \"\",\r\n                defaultDashboardId: \"9cf20700-6f1c-11f0-9e5f-db09c3cbe3c9\",\r\n                defaultDashboardFullscreen: true,\r\n                homeDashboardId: null,\r\n                homeDashboardHideToolbar: true,\r\n                userCredentialsEnabled: true,\r\n                userActivated: true\r\n            }\r\n        };\r\n\r\n        userService.saveUser(user, true).subscribe({\r\n            next: function (savedUser) {\r\n                widgetContext.showSuccessToast('Usuario creado y correo de activación enviado.');\r\n                widgetContext.updateAliases();\r\n                vm.dialogRef.close(savedUser);\r\n            },\r\n            error: function (err) {\r\n                widgetContext.showErrorToast('Error al crear usuario: ' + err.message);\r\n            }\r\n        });\r\n    };\r\n}\r\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\nlet userService = $injector.get(widgetContext.servicesMap.get('userService'));\r\n\r\nopenAddUserDialog();\r\n\r\nfunction openAddUserDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddUserDialogController).subscribe();\r\n}\r\n\r\nfunction AddUserDialogController(instance) {\r\n    let vm = instance;\r\n\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n        email: ['', [vm.validators.required, vm.validators.email]],\r\n        firstName: [''],\r\n        lastName: ['']\r\n    });\r\n\r\n    vm.cancel = function () {\r\n        vm.dialogRef.close(null);\r\n    };\r\n\r\n    vm.save = function () {\r\n        vm.addEntityFormGroup.markAsPristine();\r\n\r\n        const formValues = vm.addEntityFormGroup.value;\r\n\r\n        // ID del cliente \"Usuarios\"\r\n        //const customerId = {\r\n        //    entityType: 'CUSTOMER',\r\n        //    id: 'c9a39b70-7317-11f0-9e5f-db09c3cbe3c9'  // \r\n        //};\r\n\r\n        const tenantId = {\r\n            entityType: 'TENANT',\r\n            id: widgetContext.currentUser.userId\r\n        };\r\n        //const tenantId = widgetContext.currentUser.user.tenantId;\r\n\r\n        const user = {\r\n            email: formValues.email,\r\n            firstName: formValues.firstName,\r\n            lastName: formValues.lastName,\r\n            authority: 'TENANT_ADMIN',\r\n            tenantId,\r\n            additionalInfo: {\r\n                description: \"\",\r\n                defaultDashboardId: \"ce0b34c0-9edc-11f0-a80a-d12bdf692708\",\r\n                defaultDashboardFullscreen: true,\r\n                homeDashboardId: null,\r\n                homeDashboardHideToolbar: true,\r\n                userCredentialsEnabled: true,\r\n                userActivated: true\r\n            }\r\n        };\r\n\r\n        userService.saveUser(user, false).subscribe({\r\n            next: function (savedUser) {\r\n                widgetContext.showSuccessToast('Usuario creado y correo de activación enviado.');\r\n                widgetContext.updateAliases();\r\n                vm.dialogRef.close(savedUser);\r\n            },\r\n            error: function (err) {\r\n                widgetContext.showErrorToast('Error al crear usuario: ' + err.message);\r\n            }\r\n        });\r\n    };\r\n}\r\n",
                 "customResources" : [ ],
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
@@ -182,101 +197,9 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "6092e31e-a9b7-7a25-a026-dc7ccb105df4"
+          "id" : "6b57e3eb-117a-390c-778f-8c94049596b1"
         },
-        "c55ab5f4-62ee-c8d0-7cd0-29df4556bfd5" : {
-          "type" : "latest",
-          "sizeX" : 5,
-          "sizeY" : 3.5,
-          "config" : {
-            "datasources" : [ ],
-            "timewindow" : {
-              "displayValue" : "",
-              "selectedTab" : 0,
-              "realtime" : {
-                "realtimeType" : 1,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "quickInterval" : "CURRENT_DAY",
-                "hideInterval" : false,
-                "hideLastInterval" : false,
-                "hideQuickInterval" : false
-              },
-              "history" : {
-                "historyType" : 0,
-                "interval" : 1000,
-                "timewindowMs" : 60000,
-                "fixedTimewindow" : {
-                  "startTimeMs" : 1682924137231,
-                  "endTimeMs" : 1683010537231
-                },
-                "quickInterval" : "CURRENT_DAY",
-                "hideInterval" : false,
-                "hideLastInterval" : false,
-                "hideFixedInterval" : false,
-                "hideQuickInterval" : false
-              },
-              "aggregation" : {
-                "type" : "AVG",
-                "limit" : 2500
-              }
-            },
-            "showTitle" : false,
-            "backgroundColor" : "#fff",
-            "color" : "rgba(0, 0, 0, 0.87)",
-            "padding" : "0px",
-            "settings" : {
-              "useMarkdownTextFunction" : true,
-              "markdownTextPattern" : "# Markdown/HTML card \\n - **Current entity**: **${entityName}**. \\n - **Current value**: **${Random}**.",
-              "markdownTextFunction" : "\nvar darkMode = $('.tb-dashboard-page').hasClass('dark');\nvar darkModeExpression = darkMode ? '(darkMode !== false)' : 'darkMode';\n\nreturn '<div class=\"header flex flex-col items-center justify-around gt-sm:flex-row gt-sm:items-stretch gt-sm:justify-start gt-sm:gap-6\">' +\n        '<div class=\"flex flex-col items-stretch justify-center\">' +\n           '<div class=\"title\">Huella Hidrica</div>' +\n        '</div>' +\n        '<div class=\"flex flex-col gt-sm:flex-1 items-center justify-around gap-4 gt-sm:flex-row gt-sm:gap-2 gt-sm:items-center gt-sm:justify-start\">' +\n           '<div class=\"powered-by\">Smart water monitoring</div>' +\n        '</div>' +\n        '<div class=\"flex flex-col items-stretch justify-center\" style=\"padding-right: 24px;\">' +\n            '<button (click)=\"darkMode = '+darkModeExpression+' ? false : true\" id=\"dark-mode-switch\" mat-icon-button matTooltip=\"{{ '+ darkModeExpression +' ? &quot;Switch to light mode&quot; : &quot;Switch to dark mode&quot; }}\"><mat-icon>{{ '+ darkModeExpression +' ? &quot;light_mode&quot; : &quot;dark_mode&quot; }}</mat-icon></button>' +\n        '</div>' +\n    '</div>';\n    ",
-              "applyDefaultMarkdownStyle" : false,
-              "markdownCss" : ".header {\n    height: 100%;\n    padding: 0 0 0 24px;\n    justify-content: space-around;\n}\n\n@media (min-width: 960px) {\n    .header {\n        gap: 24px;\n    }\n}\n\n.header .mat-icon.title-icon {\n    width: 40px;\n    height: 40px;\n}\n\n.header .title {\n    font-size: 24px;\n    font-weight: 500;\n    color: #28232D;\n}\n\n.header .subtitle {\n    font-size: 13px;\n    font-weight: normal;\n    color: #757575;\n}\n"
-            },
-            "title" : "New Markdown/HTML Card",
-            "showTitleIcon" : false,
-            "iconColor" : "rgba(0, 0, 0, 0.87)",
-            "iconSize" : "24px",
-            "titleTooltip" : "",
-            "dropShadow" : true,
-            "enableFullscreen" : false,
-            "widgetStyle" : { },
-            "titleStyle" : {
-              "fontSize" : "16px",
-              "fontWeight" : 400
-            },
-            "showLegend" : false,
-            "widgetCss" : ".tb-markdown-view a:hover {\n    text-decoration: none;\n}",
-            "noDataDisplayMessage" : "",
-            "actions" : {
-              "elementClick" : [ {
-                "name" : "dark-mode-switch",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "custom",
-                "customFunction" : "$('.tb-dashboard-page').toggleClass('dark');",
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "fd666ec9-cd5a-af01-47e1-b7e53911f87a"
-              }, {
-                "name" : "try-it-now",
-                "icon" : "more_horiz",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "custom",
-                "customFunction" : "localStorage.removeItem('jwt_token');\nlocalStorage.removeItem('jwt_token_expiration');\nlocalStorage.removeItem('refresh_token');\nlocalStorage.removeItem('refresh_token_expiration');\nwindow.open('https://demo.thingsboard.io/signup', '_blank');\n",
-                "openInSeparateDialog" : false,
-                "openInPopover" : false,
-                "id" : "f6422a64-4cd4-506d-d03e-fafbf62db69b"
-              } ]
-            }
-          },
-          "row" : 0,
-          "col" : 0,
-          "id" : "c55ab5f4-62ee-c8d0-7cd0-29df4556bfd5",
-          "typeFullFqn" : "system.cards.markdown_card"
-        },
-        "6711863a-8014-2a26-7df8-9949e9530eec" : {
+        "3bf99aac-b4a9-4670-8250-f87e7fbec296" : {
           "typeFullFqn" : "system.entity_admin_widgets.device_admin_table",
           "type" : "latest",
           "sizeX" : 7.5,
@@ -356,24 +279,42 @@
               "dataKeys" : [ {
                 "name" : "name",
                 "type" : "entityField",
-                "label" : "Name",
+                "label" : "Nombre",
                 "color" : "#2196f3",
                 "settings" : { },
-                "_hash" : 0.8145253766768086
+                "_hash" : 0.8145253766768086,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "label",
                 "type" : "entityField",
-                "label" : "Label",
+                "label" : "Descripción",
                 "color" : "#f44336",
                 "settings" : { },
-                "_hash" : 0.33510629029162964
+                "_hash" : 0.33510629029162964,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
-                "name" : "type",
-                "type" : "entityField",
-                "label" : "Type",
-                "color" : "#4caf50",
+                "name" : "controller",
+                "type" : "attribute",
+                "label" : "Controlador",
+                "color" : "#f44336",
                 "settings" : { },
-                "_hash" : 0.42171857011769387
+                "_hash" : 0.6402598063714672,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -389,49 +330,60 @@
             "actions" : {
               "headerButton" : [ {
                 "name" : "Add device",
+                "buttonType" : "icon",
                 "icon" : "add",
+                "buttonColor" : "rgba(0, 0, 0, 0.87)",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
                 "type" : "customPretty",
-                "customHtml" : "<form #addDeviceForm=\"ngForm\" [formGroup]=\"addDeviceFormGroup\"\n      (ngSubmit)=\"save()\" style=\"width: 480px;\">\n  <mat-toolbar class=\"flex flex-row\" color=\"primary\">\n    <h2>Add device</h2>\n    <span class=\"flex-1\"></span>\n    <button mat-icon-button\n            (click)=\"cancel()\"\n            type=\"button\">\n      <mat-icon class=\"material-icons\">close</mat-icon>\n    </button>\n  </mat-toolbar>\n  <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n  </mat-progress-bar>\n  <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\"></div>\n  <div mat-dialog-content>\n    <div class=\"mat-padding flex flex-col\">\n      <mat-form-field class=\"mat-block\">\n        <mat-label>Device name</mat-label>\n        <input matInput formControlName=\"deviceName\" required>\n        <mat-error *ngIf=\"addDeviceFormGroup.get('deviceName').hasError('required')\">\n          Device name is required.\n        </mat-error>\n      </mat-form-field>\n      <div class=\"flex flex-row gap-2\">\n        <tb-entity-subtype-autocomplete\n            class=\"max-w-50% flex-full\"\n            formControlName=\"deviceType\"\n            [required]=\"true\"\n            [entityType]=\"'DEVICE'\"\n        ></tb-entity-subtype-autocomplete>\n        <mat-form-field class=\"mat-block max-w-50% flex-full\">\n          <mat-label>Label</mat-label>\n          <input matInput formControlName=\"deviceLabel\">\n        </mat-form-field>\n      </div>\n      <div formGroupName=\"attributes\" class=\"flex flex-row gap-2\">\n        <mat-form-field class=\"mat-block max-w-50% flex-full\">\n          <mat-label>Latitude</mat-label>\n          <input type=\"number\" step=\"any\" matInput formControlName=\"latitude\">\n        </mat-form-field>\n        <mat-form-field class=\"mat-block max-w-50% flex-full\">\n          <mat-label>Longitude</mat-label>\n          <input type=\"number\" step=\"any\" matInput formControlName=\"longitude\">\n        </mat-form-field>\n      </div>\n    </div>\n  </div>\n  <div mat-dialog-actions class=\"flex flex-row\">\n    <span class=\"flex-1\"></span>\n    <button mat-button color=\"primary\"\n            type=\"button\"\n            [disabled]=\"(isLoading$ | async)\"\n            (click)=\"cancel()\" cdkFocusInitial>\n      Cancel\n    </button>\n    <button mat-button mat-raised-button color=\"primary\"\n            style=\"margin-right: 20px;\"\n            type=\"submit\"\n            [disabled]=\"(isLoading$ | async) || addDeviceForm.invalid || !addDeviceForm.dirty\">\n      Create\n    </button>\n  </div>\n</form>\n",
+                "customHtml" : "<form #addDeviceForm=\"ngForm\"\r\n    [formGroup]=\"addDeviceFormGroup\" (ngSubmit)=\"save()\"\r\n    style=\"width: 480px;\">\r\n    <mat-toolbar class=\"flex flex-row\" color=\"primary\">\r\n        <h2>Add device</h2>\r\n        <span class=\"flex-1\"></span>\r\n        <button mat-icon-button (click)=\"cancel()\"\r\n            type=\"button\">\r\n            <mat-icon\r\n                class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\"\r\n        *ngIf=\"isLoading$ | async\">\r\n    </mat-progress-bar>\r\n    <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\">\r\n    </div>\r\n    <div mat-dialog-content>\r\n        <div class=\"mat-padding flex flex-col\">\r\n            <mat-form-field class=\"mat-block\">\r\n                <mat-label>Device name</mat-label>\r\n                <input matInput formControlName=\"deviceName\"\r\n                    required>\r\n                <mat-error\r\n                    *ngIf=\"addDeviceFormGroup.get('deviceName').hasError('required')\">\r\n                    Device name is required.\r\n                </mat-error>\r\n            </mat-form-field>\r\n            <div class=\"flex flex-row gap-2\">\r\n                <mat-form-field class=\"mat-block w-full\">\r\n                    <mat-label>Label</mat-label>\r\n                    <input matInput\r\n                        formControlName=\"deviceLabel\"\r\n                        required>\r\n                    <mat-error\r\n                        *ngIf=\"addDeviceFormGroup.get('deviceLabel').hasError('required')\">\r\n                        Label is required.\r\n                    </mat-error>\r\n                </mat-form-field>\r\n            </div>\r\n\r\n            <div formGroupName=\"attributes\"\r\n                class=\"flex flex-col\">\r\n                <mat-form-field class=\"mat-block w-full\">\r\n                    <mat-label>Controller</mat-label>\r\n                    <mat-select formControlName=\"controller\"\r\n                        required>\r\n                        <mat-option\r\n                            value=\"EasyGen 3200\">EasyGen\r\n                            3200</mat-option>\r\n                        <mat-option\r\n                            value=\"InteliGen4 200\">InteliGen4\r\n                            200</mat-option>\r\n                        <mat-option\r\n                            value=\"InteliGen3 200\">InteliGen3\r\n                            200</mat-option>\r\n                        <mat-option\r\n                            value=\"InteliLite NT\">InteliLite\r\n                            NT</mat-option>\r\n                        <mat-option\r\n                            value=\"InteliLite4\">InteliLite4</mat-option>\r\n                    </mat-select>\r\n                    <mat-error\r\n                        *ngIf=\"addDeviceFormGroup.get('attributes.controller').hasError('required')\">\r\n                        Controller is required.\r\n                    </mat-error>\r\n                </mat-form-field>\r\n            </div>\r\n\r\n            <div formGroupName=\"attributes\"\r\n                class=\"flex flex-row gap-2\">\r\n                <mat-form-field\r\n                    class=\"mat-block max-w-50% flex-full\">\r\n                    <mat-label>Latitude</mat-label>\r\n                    <input type=\"number\" step=\"any\" matInput\r\n                        formControlName=\"latitude\">\r\n                </mat-form-field>\r\n                <mat-form-field\r\n                    class=\"mat-block max-w-50% flex-full\">\r\n                    <mat-label>Longitude</mat-label>\r\n                    <input type=\"number\" step=\"any\" matInput\r\n                        formControlName=\"longitude\">\r\n                </mat-form-field>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions class=\"flex flex-row\">\r\n        <span class=\"flex-1\"></span>\r\n        <button mat-button color=\"primary\" type=\"button\"\r\n            [disabled]=\"(isLoading$ | async)\"\r\n            (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancel\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n            style=\"margin-right: 20px;\" type=\"submit\"\r\n            [disabled]=\"(isLoading$ | async) || addDeviceForm.invalid || !addDeviceForm.dirty\">\r\n            Create\r\n        </button>\r\n    </div>\r\n</form>",
                 "customCss" : "",
-                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\n\nopenAddDeviceDialog();\n\nfunction openAddDeviceDialog() {\n    customDialog.customDialog(htmlTemplate, AddDeviceDialogController).subscribe();\n}\n\nfunction AddDeviceDialogController(instance) {\n    let vm = instance;\n    \n    vm.addDeviceFormGroup = vm.fb.group({\n      deviceName: ['', [vm.validators.required]],\n      deviceType: ['', [vm.validators.required]],\n      deviceLabel: [''],\n      attributes: vm.fb.group({\n          latitude: [null],\n          longitude: [null]\n      })      \n    });\n    \n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    \n    vm.save = function() {\n        vm.addDeviceFormGroup.markAsPristine();\n        let device = {\n            name: vm.addDeviceFormGroup.get('deviceName').value,\n            type: vm.addDeviceFormGroup.get('deviceType').value,\n            label: vm.addDeviceFormGroup.get('deviceLabel').value\n        };\n        deviceService.saveDevice(device).subscribe(\n            function (device) {\n                saveAttributes(device.id).subscribe(\n                    function () {\n                        widgetContext.updateAliases();\n                        vm.dialogRef.close(null);\n                    }\n                );\n            }\n        );\n    };\n    \n    function saveAttributes(entityId) {\n        let attributes = vm.addDeviceFormGroup.get('attributes').value;\n        let attributesArray = [];\n        for (let key in attributes) {\n            attributesArray.push({key: key, value: attributes[key]});\n        }\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(entityId, \"SERVER_SCOPE\", attributesArray);\n        } else {\n            return widgetContext.rxjs.of([]);\n        }\n    }\n}",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap\n    .get('customDialog'));\nlet deviceService = $injector.get(widgetContext.servicesMap\n    .get('deviceService'));\nlet attributeService = $injector.get(widgetContext\n    .servicesMap.get('attributeService'));\nopenAddDeviceDialog();\n\nfunction openAddDeviceDialog() {\n    customDialog.customDialog(htmlTemplate,\n        AddDeviceDialogController).subscribe();\n}\n\nfunction AddDeviceDialogController(instance) {\n    let vm = instance;\n    \n    vm.addDeviceFormGroup = vm.fb.group({\n      deviceName: ['', [vm.validators.required]],\n      deviceLabel: ['', [vm.validators.required]],\n      attributes: vm.fb.group({\n          latitude: [null],\n          longitude: [null],\n          controller: ['', [vm.validators.required]] // NEW required field\n      })      \n    });\n\n    \n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    \n    vm.save = function() {\n        vm.addDeviceFormGroup.markAsPristine();\n        let device = {\n            name: vm.addDeviceFormGroup.get('deviceName').value,\n            type: \"electric generator\",   // fixed type\n            label: vm.addDeviceFormGroup.get('deviceLabel').value\n        };\n        deviceService.saveDevice(device).subscribe(\n            function (device) {\n                saveAttributes(device.id).subscribe(\n                    function () {\n                        widgetContext.updateAliases();\n                        vm.dialogRef.close(null);\n                    }\n                );\n            }\n        );\n    };\n    \n    function saveAttributes(entityId) {\n        let attributes = vm.addDeviceFormGroup.get('attributes').value;\n        let attributesArray = [];\n        for (let key in attributes) {\n            attributesArray.push({key: key, value: attributes[key]});\n        }\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(entityId, \"SHARED_SCOPE\", attributesArray);\n        } else {\n            return widgetContext.rxjs.of([]);\n        }\n    }\n}\n",
                 "customResources" : [ ],
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
                 "id" : "70837a9d-c3de-a9a7-03c5-dccd14998758"
               } ],
               "actionCellButton" : [ {
                 "name" : "copy access token",
                 "icon" : "content_copy",
+                "useShowWidgetActionFunction" : false,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "widgetContext.deviceService.getDeviceCredentials(entityId.id).subscribe({\r\n  next: (credentials) => {\r\n    const token = credentials.credentialsId;\r\n\r\n    navigator.clipboard.writeText(token).then(() => {\r\n      widgetContext.showSuccessToast(`Device token copied: ${token}`);\r\n    }).catch(err => {\r\n      console.error('Clipboard copy failed', err);\r\n    });\r\n  },\r\n  error: (err) => {\r\n    console.error('Error getting device token:', err);\r\n  }\r\n});\r\n",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "f5f685bf-5b9f-6fcb-a1cd-d9f09e4d89e7"
+              }, {
+                "name" : "Editar ubicación",
+                "icon" : "pin_drop",
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
-                "type" : "updateDashboardState",
-                "targetDashboardStateId" : null,
-                "openRightLayout" : false,
+                "type" : "openDashboardState",
+                "targetDashboardStateId" : "map",
                 "setEntityId" : true,
                 "stateEntityParamName" : null,
-                "id" : "f5f685bf-5b9f-6fcb-a1cd-d9f09e4d89e7"
+                "openRightLayout" : false,
+                "dialogTitle" : "",
+                "dialogHideDashboardToolbar" : true,
+                "dialogWidth" : 60,
+                "dialogHeight" : 70,
+                "openInSeparateDialog" : true,
+                "openInPopover" : false,
+                "id" : "7ca70cb5-6346-9565-b5e5-692703312a80"
               }, {
                 "name" : "Edit device",
                 "icon" : "edit",
                 "useShowWidgetActionFunction" : null,
                 "showWidgetActionFunction" : "return true;",
                 "type" : "customPretty",
-                "customHtml" : "<form #editDeviceForm=\"ngForm\" [formGroup]=\"editDeviceFormGroup\"\n      (ngSubmit)=\"save()\" style=\"width: 480px;\">\n  <mat-toolbar class=\"flex flex-row\" color=\"primary\">\n    <h2>Edit device</h2>\n    <span class=\"flex-1\"></span>\n    <button mat-icon-button\n            (click)=\"cancel()\"\n            type=\"button\">\n      <mat-icon class=\"material-icons\">close</mat-icon>\n    </button>\n  </mat-toolbar>\n  <mat-progress-bar color=\"warn\" mode=\"indeterminate\" *ngIf=\"isLoading$ | async\">\n  </mat-progress-bar>\n  <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\"></div>\n  <div mat-dialog-content>\n    <div class=\"mat-padding flex flex-col\">\n      <mat-form-field class=\"mat-block\">\n        <mat-label>Device name</mat-label>\n        <input matInput formControlName=\"deviceName\" required>\n        <mat-error *ngIf=\"editDeviceFormGroup.get('deviceName').hasError('required')\">\n          Device name is required.\n        </mat-error>\n      </mat-form-field>\n      <div class=\"flex flex-row gap-2\">\n        <tb-entity-subtype-autocomplete\n            class=\"max-w-50% flex-full\"\n            formControlName=\"deviceType\"\n            [required]=\"true\"\n            [entityType]=\"'DEVICE'\"\n        ></tb-entity-subtype-autocomplete>\n        <mat-form-field class=\"mat-block max-w-50% flex-full\">\n          <mat-label>Label</mat-label>\n          <input matInput formControlName=\"deviceLabel\">\n        </mat-form-field>\n      </div>\n      <div formGroupName=\"attributes\" class=\"flex flex-row gap-2\">\n        <mat-form-field class=\"mat-block max-w-50% flex-full\">\n          <mat-label>Latitude</mat-label>\n          <input type=\"number\" step=\"any\" matInput formControlName=\"latitude\">\n        </mat-form-field>\n        <mat-form-field class=\"mat-block max-w-50% flex-full\">\n          <mat-label>Longitude</mat-label>\n          <input type=\"number\" step=\"any\" matInput formControlName=\"longitude\">\n        </mat-form-field>\n      </div>\n    </div>\n  </div>\n  <div mat-dialog-actions class=\"flex flex-row\">\n    <span class=\"flex-1\"></span>\n    <button mat-button color=\"primary\"\n            type=\"button\"\n            [disabled]=\"(isLoading$ | async)\"\n            (click)=\"cancel()\" cdkFocusInitial>\n      Cancel\n    </button>\n    <button mat-button mat-raised-button color=\"primary\"\n            style=\"margin-right: 20px;\"\n            type=\"submit\"\n            [disabled]=\"(isLoading$ | async) || editDeviceForm.invalid || !editDeviceForm.dirty\">\n      Update\n    </button>\n  </div>\n</form>\n",
+                "customHtml" : "<form #editDeviceForm=\"ngForm\"\r\n    [formGroup]=\"editDeviceFormGroup\" (ngSubmit)=\"save()\"\r\n    style=\"width: 480px;\">\r\n    <mat-toolbar class=\"flex flex-row\" color=\"primary\">\r\n        <h2>Edit device</h2>\r\n        <span class=\"flex-1\"></span>\r\n        <button mat-icon-button (click)=\"cancel()\"\r\n            type=\"button\">\r\n            <mat-icon\r\n                class=\"material-icons\">close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n    <mat-progress-bar color=\"warn\" mode=\"indeterminate\"\r\n        *ngIf=\"isLoading$ | async\">\r\n    </mat-progress-bar>\r\n    <div style=\"height: 4px;\" *ngIf=\"!(isLoading$ | async)\">\r\n    </div>\r\n    <div mat-dialog-content>\r\n        <div class=\"mat-padding flex flex-col\">\r\n            <mat-form-field class=\"mat-block\">\r\n                <mat-label>Device name</mat-label>\r\n                <input matInput formControlName=\"deviceName\"\r\n                    required>\r\n                <mat-error\r\n                    *ngIf=\"editDeviceFormGroup.get('deviceName').hasError('required')\">\r\n                    Device name is required.\r\n                </mat-error>\r\n            </mat-form-field>\r\n\r\n            <!-- Label full row -->\r\n            <mat-form-field class=\"mat-block w-full\">\r\n                <mat-label>Label</mat-label>\r\n                <input matInput\r\n                    formControlName=\"deviceLabel\" required>\r\n                <mat-error\r\n                    *ngIf=\"editDeviceFormGroup.get('deviceLabel').hasError('required')\">\r\n                    Label is required.\r\n                </mat-error>\r\n            </mat-form-field>\r\n\r\n            <div formGroupName=\"attributes\"\r\n                class=\"flex flex-col\">\r\n                <mat-form-field class=\"mat-block w-full\">\r\n                    <mat-label>Controller</mat-label>\r\n                    <mat-select formControlName=\"controller\"\r\n                        required>\r\n                        <mat-option\r\n                            value=\"EasyGen 3200\">EasyGen\r\n                            3200</mat-option>\r\n                        <mat-option\r\n                            value=\"InteliGen4 200\">InteliGen4\r\n                            200</mat-option>\r\n                        <mat-option\r\n                            value=\"InteliGen3 200\">InteliGen3\r\n                            200</mat-option>\r\n                        <mat-option\r\n                            value=\"InteliLite NT\">InteliLite\r\n                            NT</mat-option>\r\n                        <mat-option\r\n                            value=\"InteliLite4\">InteliLite4</mat-option>\r\n                    </mat-select>\r\n                    <mat-error\r\n                        *ngIf=\"editDeviceFormGroup.get('attributes.controller').hasError('required')\">\r\n                        Controller is required.\r\n                    </mat-error>\r\n                </mat-form-field>\r\n            </div>\r\n\r\n\r\n            <div formGroupName=\"attributes\"\r\n                class=\"flex flex-row gap-2\">\r\n                <mat-form-field\r\n                    class=\"mat-block max-w-50% flex-full\">\r\n                    <mat-label>Latitude</mat-label>\r\n                    <input type=\"number\" step=\"any\" matInput\r\n                        formControlName=\"latitude\">\r\n                </mat-form-field>\r\n                <mat-form-field\r\n                    class=\"mat-block max-w-50% flex-full\">\r\n                    <mat-label>Longitude</mat-label>\r\n                    <input type=\"number\" step=\"any\" matInput\r\n                        formControlName=\"longitude\">\r\n                </mat-form-field>\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <div mat-dialog-actions class=\"flex flex-row\">\r\n        <span class=\"flex-1\"></span>\r\n        <button mat-button color=\"primary\" type=\"button\"\r\n            [disabled]=\"(isLoading$ | async)\"\r\n            (click)=\"cancel()\" cdkFocusInitial>\r\n            Cancel\r\n        </button>\r\n        <button mat-button mat-raised-button color=\"primary\"\r\n            style=\"margin-right: 20px;\" type=\"submit\"\r\n            [disabled]=\"(isLoading$ | async) || editDeviceForm.invalid || !editDeviceForm.dirty\">\r\n            Update\r\n        </button>\r\n    </div>\r\n</form>",
                 "customCss" : "",
-                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\n\nopenEditDeviceDialog();\n\nfunction openEditDeviceDialog() {\n    customDialog.customDialog(htmlTemplate, EditDeviceDialogController).subscribe();\n}\n\nfunction EditDeviceDialogController(instance) {\n    let vm = instance;\n    \n    vm.device = null;\n    vm.attributes = {};\n    \n    vm.editDeviceFormGroup = vm.fb.group({\n      deviceName: ['', [vm.validators.required]],\n      deviceType: ['', [vm.validators.required]],\n      deviceLabel: [''],\n      attributes: vm.fb.group({\n          latitude: [null],\n          longitude: [null]\n      })      \n    });\n    \n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    \n    vm.save = function() {\n        vm.editDeviceFormGroup.markAsPristine();\n        if (vm.editDeviceFormGroup.get('deviceType').value !== vm.device.type) {\n            delete vm.device.deviceProfileId;\n        }\n        vm.device.name = vm.editDeviceFormGroup.get('deviceName').value,\n        vm.device.type = vm.editDeviceFormGroup.get('deviceType').value,\n        vm.device.label = vm.editDeviceFormGroup.get('deviceLabel').value\n        deviceService.saveDevice(vm.device).subscribe(\n            function () {\n                saveAttributes().subscribe(\n                    function () {\n                        widgetContext.updateAliases();\n                        vm.dialogRef.close(null);\n                    }\n                );\n            }\n        );\n    };\n    \n    getEntityInfo();\n    \n    function getEntityInfo() {\n        deviceService.getDevice(entityId.id).subscribe(\n            function (device) {\n                attributeService.getEntityAttributes(entityId, 'SERVER_SCOPE',\n                                                    ['latitude', 'longitude']).subscribe(\n                   function (attributes) {\n                        for (let i = 0; i < attributes.length; i++) {\n                            vm.attributes[attributes[i].key] = attributes[i].value; \n                        }\n                        vm.device = device;\n                        vm.editDeviceFormGroup.patchValue(\n                            {\n                                deviceName: vm.device.name,\n                                deviceType: vm.device.type,\n                                deviceLabel: vm.device.label,\n                                attributes: {\n                                    latitude: vm.attributes.latitude,\n                                    longitude: vm.attributes.longitude\n                                }\n                            }, {emitEvent: false}\n                        );\n                   } \n                );\n            }\n        );    \n    }\n    \n    function saveAttributes() {\n        let attributes = vm.editDeviceFormGroup.get('attributes').value;\n        let attributesArray = [];\n        for (let key in attributes) {\n            attributesArray.push({key: key, value: attributes[key]});\n        }\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(entityId, 'SERVER_SCOPE', attributesArray);\n        } else {\n            return widgetContext.rxjs.of([]);\n        }\n    }\n}",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\nlet attributeService = $injector.get(widgetContext.servicesMap.get('attributeService'));\n\nopenEditDeviceDialog();\n\nfunction openEditDeviceDialog() {\n    customDialog.customDialog(htmlTemplate, EditDeviceDialogController).subscribe();\n}\n\nfunction EditDeviceDialogController(instance) {\n    let vm = instance;\n    \n    vm.device = null;\n    vm.attributes = {};\n    \n    vm.editDeviceFormGroup = vm.fb.group({\n      deviceName: ['', [vm.validators.required]],\n      deviceLabel: ['', [vm.validators.required]],\n      attributes: vm.fb.group({\n          latitude: [null],\n          longitude: [null],\n          controller: ['', [vm.validators.required]] // NEW required field\n      })      \n    });\n\n    \n    vm.cancel = function() {\n        vm.dialogRef.close(null);\n    };\n    \n    vm.save = function() {\n        vm.editDeviceFormGroup.markAsPristine();\n        \n        vm.device.name = vm.editDeviceFormGroup.get('deviceName').value;\n        vm.device.type = \"electric generator\";   // fixed type\n        vm.device.label = vm.editDeviceFormGroup.get('deviceLabel').value;\n\n        deviceService.saveDevice(vm.device).subscribe(\n            function () {\n                saveAttributes().subscribe(\n                    function () {\n                        widgetContext.updateAliases();\n                        vm.dialogRef.close(null);\n                    }\n                );\n            }\n        );\n    };\n    \n    getEntityInfo();\n    \n    function getEntityInfo() {\n        deviceService.getDevice(entityId.id).subscribe(\n            function (device) {\n                attributeService.getEntityAttributes(entityId, 'SHARED_SCOPE',\n                                                    ['latitude', 'longitude', 'controller']).subscribe(\n                   function (attributes) {\n                        for (let i = 0; i < attributes.length; i++) {\n                            vm.attributes[attributes[i].key] = attributes[i].value; \n                        }\n                        vm.device = device;\n                        vm.editDeviceFormGroup.patchValue(\n                            {\n                                deviceName: vm.device.name,\n                                deviceLabel: vm.device.label,\n                                attributes: {\n                                    latitude: vm.attributes.latitude,\n                                    longitude: vm.attributes.longitude,\n                                    controller: vm.attributes.controller  // preload value\n                                }\n                            }, {emitEvent: false}\n                        );\n                   } \n                );\n\n            }\n        );    \n    }\n    \n    function saveAttributes() {\n        let attributes = vm.editDeviceFormGroup.get('attributes').value;\n        let attributesArray = [];\n        for (let key in attributes) {\n            attributesArray.push({key: key, value: attributes[key]});\n        }\n        if (attributesArray.length > 0) {\n            return attributeService.saveEntityAttributes(entityId, 'SHARED_SCOPE', attributesArray);\n        } else {\n            return widgetContext.rxjs.of([]);\n        }\n    }\n}\n",
                 "customResources" : [ ],
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
                 "id" : "93931e52-5d7c-903e-67aa-b9435df44ff4"
-              }, {
-                "name" : "upload image",
-                "icon" : "mdi:image-plus",
-                "useShowWidgetActionFunction" : null,
-                "showWidgetActionFunction" : "return true;",
-                "type" : "updateDashboardState",
-                "targetDashboardStateId" : null,
-                "openRightLayout" : false,
-                "setEntityId" : true,
-                "stateEntityParamName" : null,
-                "id" : "1a4bdae7-eb8c-a912-7614-c1597960a316"
               }, {
                 "name" : "Delete device",
                 "icon" : "delete",
@@ -449,9 +401,101 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "6711863a-8014-2a26-7df8-9949e9530eec"
+          "id" : "3bf99aac-b4a9-4670-8250-f87e7fbec296"
         },
-        "cdc1b1ab-8634-bcf0-26ba-a2bc1e1744cc" : {
+        "d30fa361-463b-7634-674d-b34b66ec278d" : {
+          "type" : "latest",
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1682924137231,
+                  "endTimeMs" : 1683010537231
+                },
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : true,
+              "markdownTextPattern" : "# Markdown/HTML card \\n - **Current entity**: **${entityName}**. \\n - **Current value**: **${Random}**.",
+              "markdownTextFunction" : "\nvar darkMode = $('.tb-dashboard-page').hasClass('dark');\nvar darkModeExpression = darkMode ? '(darkMode !== false)' : 'darkMode';\n\nreturn '<div class=\"header flex flex-col items-center justify-around gt-sm:flex-row gt-sm:items-stretch gt-sm:justify-start gt-sm:gap-6\">' +\n        '<div class=\"flex flex-col items-stretch justify-center\">' +\n           '<div class=\"title\">Energy Tracking</div>' +\n        '</div>' +\n        '<div class=\"flex flex-col gt-sm:flex-1 items-center justify-around gap-4 gt-sm:flex-row gt-sm:gap-2 gt-sm:items-center gt-sm:justify-start\">' +\n           '<div class=\"powered-by\">Demo desarrollada por smelpro</div>' +\n        '</div>' +\n        '<div class=\"flex flex-col items-stretch justify-center\" style=\"padding-right: 24px;\">' +\n            '<button (click)=\"darkMode = '+darkModeExpression+' ? false : true\" id=\"dark-mode-switch\" mat-icon-button matTooltip=\"{{ '+ darkModeExpression +' ? &quot;Switch to light mode&quot; : &quot;Switch to dark mode&quot; }}\"><mat-icon>{{ '+ darkModeExpression +' ? &quot;light_mode&quot; : &quot;dark_mode&quot; }}</mat-icon></button>' +\n        '</div>' +\n    '</div>';\n    ",
+              "applyDefaultMarkdownStyle" : false,
+              "markdownCss" : ".header {\n    height: 100%;\n    padding: 0 0 0 14px;\n    justify-content: space-around;\n} \n\n@media (min-width: 960px) {\n    .header {\n        gap: 24px;\n    }\n}\n\n.header .mat-icon.title-icon {\n    width: 40px;\n    height: 40px;\n}\n\n.header .title {\n    font-size: 24px;\n    font-weight: 600;\n    color: #28232D;\n}\n\n.header .subtitle {\n    font-size: 13px;\n    font-weight: normal;\n    color: #757575;\n}\n"
+            },
+            "title" : "New Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "widgetCss" : ".tb-markdown-view a:hover {\n    text-decoration: none;\n}",
+            "noDataDisplayMessage" : "",
+            "actions" : {
+              "elementClick" : [ {
+                "name" : "dark-mode-switch",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "$('.tb-dashboard-page').toggleClass('dark');",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "fd666ec9-cd5a-af01-47e1-b7e53911f87a"
+              }, {
+                "name" : "try-it-now",
+                "icon" : "more_horiz",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "localStorage.removeItem('jwt_token');\nlocalStorage.removeItem('jwt_token_expiration');\nlocalStorage.removeItem('refresh_token');\nlocalStorage.removeItem('refresh_token_expiration');\nwindow.open('https://demo.thingsboard.io/signup', '_blank');\n",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "f6422a64-4cd4-506d-d03e-fafbf62db69b"
+              } ]
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "d30fa361-463b-7634-674d-b34b66ec278d",
+          "typeFullFqn" : "system.cards.markdown_card"
+        },
+        "89b9c70b-6f4d-a04e-c802-f9010d8e5253" : {
           "typeFullFqn" : "system.cards.entities_table",
           "type" : "latest",
           "sizeX" : 7.5,
@@ -493,7 +537,7 @@
             "color" : "rgba(0, 0, 0, 0.87)",
             "padding" : "4px",
             "settings" : {
-              "entitiesTitle" : "Administradores",
+              "entitiesTitle" : "Usuarios",
               "enableSearch" : true,
               "enableSelectColumnDisplay" : true,
               "enableStickyHeader" : true,
@@ -528,42 +572,59 @@
               "type" : "entity",
               "name" : "",
               "entityAliasId" : "66648982-96c8-3140-1f78-86564ffbea8c",
-              "filterId" : "e8ae092f-7398-6244-cfe4-37c73fc9dfd8",
+              "filterId" : "e1647e6f-faae-00bb-4008-6163a5163284",
               "dataKeys" : [ {
-                "name" : "name",
-                "type" : "entityField",
-                "label" : "Name",
-                "color" : "#2196f3",
-                "settings" : { },
-                "_hash" : 0.7466669558570668
-              }, {
                 "name" : "email",
                 "type" : "entityField",
-                "label" : "Email",
+                "label" : "Usuario",
                 "color" : "#4caf50",
                 "settings" : { },
-                "_hash" : 0.2994408019546888
+                "_hash" : 0.2994408019546888,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "firstName",
                 "type" : "entityField",
-                "label" : "First name",
+                "label" : "Nombre",
                 "color" : "#ffc107",
                 "settings" : { },
-                "_hash" : 0.8774543295177568
+                "_hash" : 0.8774543295177568,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "lastName",
                 "type" : "entityField",
-                "label" : "Last name",
+                "label" : "Apellido",
                 "color" : "#607d8b",
                 "settings" : { },
-                "_hash" : 0.5894745228836846
+                "_hash" : 0.5894745228836846,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               }, {
                 "name" : "phone",
                 "type" : "entityField",
-                "label" : "Phone",
+                "label" : "Celular",
                 "color" : "#607d8b",
                 "settings" : { },
-                "_hash" : 0.6730739369191564
+                "_hash" : 0.6730739369191564,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
               } ],
               "alarmFilterConfig" : {
                 "statusList" : [ "ACTIVE" ]
@@ -572,7 +633,48 @@
             "displayTimewindow" : false,
             "configMode" : "advanced",
             "actions" : {
-              "actionCellButton" : [ ],
+              "actionCellButton" : [ {
+                "name" : "Copiar Link de Activación",
+                "icon" : "link",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "widgetContext.userService.getActivationLink(entityId.id).subscribe({\r\n  next: (link) => {\r\n    // 1. Copy to clipboard\r\n    navigator.clipboard.writeText(link).then(() => {\r\n      // 2. Show success toast\r\n      widgetContext.showSuccessToast(`Activation link copied: ${link}`);\r\n    }).catch(err => {\r\n      console.error('Clipboard copy failed', err);\r\n    });\r\n  },\r\n  error: (err) => {\r\n    console.error('Error fetching activation link:', err);\r\n  }\r\n});\r\n",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "ce8c020c-c909-f469-faaa-a5c2d5e5fcc9"
+              }, {
+                "name" : "Enviar link de activación",
+                "icon" : "mdi:email-arrow-right",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "widgetContext.userService.sendActivationEmail(additionalParams.entity.Usuario).subscribe({\r\n  next: () => {\r\n    widgetContext.showSuccessToast(`Activation email sent to ${additionalParams.entity.Usuario}`);\r\n  },\r\n  error: (err) => {\r\n    console.error('Error sending activation email:', err);\r\n  }\r\n});\r\n",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "dc266e61-2b19-3df5-6cbb-ac3ef6106c91"
+              }, {
+                "name" : "edit",
+                "icon" : "edit",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "updateDashboardState",
+                "targetDashboardStateId" : null,
+                "openRightLayout" : false,
+                "setEntityId" : true,
+                "stateEntityParamName" : null,
+                "id" : "3b218466-4cd8-b175-5a3f-9c0334fe54cb"
+              }, {
+                "name" : "dlelete",
+                "icon" : "delete",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\nlet dialogs = $injector.get(widgetContext.servicesMap.get('dialogs'));\nlet deviceService = $injector.get(widgetContext.servicesMap.get('deviceService'));\n\nopenDeleteDeviceDialog();\n\nfunction openDeleteDeviceDialog() {\n    let title = \"¿Está seguro que desea eliminar el usuario \" + entityName +  \" ?\";\n    let content = \"Luego de esta confimación, la acción es irreversible\";\n    dialogs.confirm(title, content, 'Cancelar', 'Borrar').subscribe(\n        function (result) {\n            if (result) {\n                deleteDevice();\n            }\n        }\n    );\n}\n\nfunction deleteDevice() {\n    \n    widgetContext.userService.deleteUser(entityId.id).subscribe(\n        function () {\n            widgetContext.updateAliases();\n        }\n    );\n    \n}\n",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "214894b0-11a5-f87f-f000-90003cdd316a"
+              } ],
               "headerButton" : [ {
                 "name" : "add user",
                 "buttonType" : "icon",
@@ -583,7 +685,7 @@
                 "type" : "customPretty",
                 "customHtml" : "<form #addUserForm=\"ngForm\" [formGroup]=\"addEntityFormGroup\" (ngSubmit)=\"save()\" class=\"add-user-form\">\r\n\r\n    <mat-toolbar color=\"primary\">\r\n        <h2>Registrar Usuario</h2>\r\n        <span class=\"flex-1\"></span>\r\n        <button mat-icon-button (click)=\"cancel()\" type=\"button\">\r\n            <mat-icon>close</mat-icon>\r\n        </button>\r\n    </mat-toolbar>\r\n\r\n    <div mat-dialog-content style=\"padding: 24px;\">\r\n        <mat-form-field appearance=\"fill\" class=\"mat-block\" style=\"width: 100%;\">\r\n            <mat-label>Email</mat-label>\r\n            <input matInput formControlName=\"email\" required>\r\n            <mat-error *ngIf=\"addEntityFormGroup.get('email').hasError('required')\">\r\n                Campo obligatorio.\r\n            </mat-error>\r\n        </mat-form-field>\r\n\r\n        <mat-form-field appearance=\"fill\" class=\"mat-block\" style=\"width: 100%;\">\r\n            <mat-label>Nombre</mat-label>\r\n            <input matInput formControlName=\"firstName\">\r\n        </mat-form-field>\r\n\r\n        <mat-form-field appearance=\"fill\" class=\"mat-block\" style=\"width: 100%;\">\r\n            <mat-label>Apellido</mat-label>\r\n            <input matInput formControlName=\"lastName\">\r\n        </mat-form-field>\r\n    </div>\r\n\r\n    <mat-divider style=\"width: 100%;\"></mat-divider>\r\n\r\n    <div mat-dialog-actions style=\"padding: 8px;\" class=\"flex flex-row justify-end\">\r\n        <button mat-button type=\"button\" (click)=\"cancel()\">Cancelar</button>\r\n        <button mat-raised-button color=\"primary\" type=\"submit\"\r\n                [disabled]=\"addUserForm.invalid || (isLoading$ | async)\">\r\n            Crear\r\n        </button>\r\n    </div>\r\n</form>\r\n",
                 "customCss" : "/*=======================================================================*/\n/*==========  There are two examples: for edit and add entity  ==========*/\n/*=======================================================================*/\n/*========================  Edit entity example  ========================*/\n/*=======================================================================*/\n/*\n.edit-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.edit-entity-form .boolean-value-input .checkbox-label {\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n/*========================================================================*/\n/*=========================  Add entity example  =========================*/\n/*========================================================================*/\n/*\n.add-entity-form .boolean-value-input {\n    padding-left: 5px;\n}\n\n.add-entity-form .boolean-value-input .checkbox-label {\n    color: rgba(0,0,0,0.54);\n    font-size: 12px;\n}\n\n.relations-list .header {\n    padding-right: 5px;\n    padding-bottom: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .header .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n    font-size: 12px;\n    font-weight: 700;\n    color: rgba(0, 0, 0, .54);\n    white-space: nowrap;\n}\n\n.relations-list .mat-form-field-infix {\n    width: auto !important;\n}\n\n.relations-list .body {\n    padding-right: 5px;\n    padding-bottom: 15px;\n    padding-left: 5px;\n}\n\n.relations-list .body .row {\n    padding-top: 5px;\n}\n\n.relations-list .body .cell {\n    padding-right: 5px;\n    padding-left: 5px;\n}\n\n.relations-list .body .md-button {\n    margin: 0;\n}\n*/\n",
-                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\nlet userService = $injector.get(widgetContext.servicesMap.get('userService'));\r\n\r\nopenAddUserDialog();\r\n\r\nfunction openAddUserDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddUserDialogController).subscribe();\r\n}\r\n\r\nfunction AddUserDialogController(instance) {\r\n    let vm = instance;\r\n\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n        email: ['', [vm.validators.required, vm.validators.email]],\r\n        firstName: [''],\r\n        lastName: ['']\r\n    });\r\n\r\n    vm.cancel = function () {\r\n        vm.dialogRef.close(null);\r\n    };\r\n\r\n    vm.save = function () {\r\n        vm.addEntityFormGroup.markAsPristine();\r\n\r\n        const formValues = vm.addEntityFormGroup.value;\r\n\r\n        // ID del cliente \"Usuarios\", debe ser hardcoded (ajusta este ID real desde tu plataforma)\r\n        const customerId = {\r\n            entityType: 'CUSTOMER',\r\n            id: 'c9a39b70-7317-11f0-9e5f-db09c3cbe3c9'  // <- AJUSTA ESTE ID A TU CASO\r\n        };\r\n\r\n        const tenantId = {\r\n            entityType: 'TENANT',\r\n            id: widgetContext.currentUser.userId\r\n        };\r\n        //const tenantId = widgetContext.currentUser.user.tenantId;\r\n\r\n        const user = {\r\n            email: formValues.email,\r\n            firstName: formValues.firstName,\r\n            lastName: formValues.lastName,\r\n            authority: 'CUSTOMER_USER',\r\n            customerId,\r\n            tenantId,\r\n            additionalInfo: {\r\n                description: \"\",\r\n                defaultDashboardId: \"9cf20700-6f1c-11f0-9e5f-db09c3cbe3c9\",\r\n                defaultDashboardFullscreen: true,\r\n                homeDashboardId: null,\r\n                homeDashboardHideToolbar: true,\r\n                userCredentialsEnabled: true,\r\n                userActivated: true\r\n            }\r\n        };\r\n\r\n        userService.saveUser(user, true).subscribe({\r\n            next: function (savedUser) {\r\n                widgetContext.showSuccessToast('Usuario creado y correo de activación enviado.');\r\n                widgetContext.updateAliases();\r\n                vm.dialogRef.close(savedUser);\r\n            },\r\n            error: function (err) {\r\n                widgetContext.showErrorToast('Error al crear usuario: ' + err.message);\r\n            }\r\n        });\r\n    };\r\n}\r\n",
+                "customFunction" : "let $injector = widgetContext.$scope.$injector;\r\nlet customDialog = $injector.get(widgetContext.servicesMap.get('customDialog'));\r\nlet userService = $injector.get(widgetContext.servicesMap.get('userService'));\r\n\r\nopenAddUserDialog();\r\n\r\nfunction openAddUserDialog() {\r\n    customDialog.customDialog(htmlTemplate, AddUserDialogController).subscribe();\r\n}\r\n\r\nfunction AddUserDialogController(instance) {\r\n    let vm = instance;\r\n\r\n    vm.addEntityFormGroup = vm.fb.group({\r\n        email: ['', [vm.validators.required, vm.validators.email]],\r\n        firstName: [''],\r\n        lastName: ['']\r\n    });\r\n\r\n    vm.cancel = function () {\r\n        vm.dialogRef.close(null);\r\n    };\r\n\r\n    vm.save = function () {\r\n        vm.addEntityFormGroup.markAsPristine();\r\n\r\n        const formValues = vm.addEntityFormGroup.value;\r\n\r\n        // ID del cliente \"Usuarios\"\r\n        const customerId = {\r\n            entityType: 'CUSTOMER',\r\n            id: 'a7537230-90cb-11f0-94f7-e3430df9a4b8'  //\r\n        };\r\n\r\n        const tenantId = {\r\n            entityType: 'TENANT',\r\n            id: widgetContext.currentUser.userId\r\n        };\r\n        //const tenantId = widgetContext.currentUser.user.tenantId;\r\n\r\n        const user = {\r\n            email: formValues.email,\r\n            firstName: formValues.firstName,\r\n            lastName: formValues.lastName,\r\n            authority: 'CUSTOMER_USER',\r\n            customerId,\r\n            tenantId,\r\n            additionalInfo: {\r\n                description: \"\",\r\n                defaultDashboardId: \"ce0b34c0-9edc-11f0-a80a-d12bdf692708\",\r\n                defaultDashboardFullscreen: true,\r\n                homeDashboardId: null,\r\n                homeDashboardHideToolbar: true,\r\n                userCredentialsEnabled: true,\r\n                userActivated: true\r\n            }\r\n        };\r\n\r\n        userService.saveUser(user, false).subscribe({\r\n            next: function (savedUser) {\r\n                widgetContext.showSuccessToast('Usuario creado y correo de activación enviado.');\r\n                widgetContext.updateAliases();\r\n                vm.dialogRef.close(savedUser);\r\n            },\r\n            error: function (err) {\r\n                widgetContext.showErrorToast('Error al crear usuario: ' + err.message);\r\n            }\r\n        });\r\n    };\r\n}\r\n",
                 "customResources" : [ ],
                 "openInSeparateDialog" : false,
                 "openInPopover" : false,
@@ -603,7 +705,240 @@
           },
           "row" : 0,
           "col" : 0,
-          "id" : "cdc1b1ab-8634-bcf0-26ba-a2bc1e1744cc"
+          "id" : "89b9c70b-6f4d-a04e-c802-f9010d8e5253"
+        },
+        "b434651b-b845-5a45-cf12-f183016c4a94" : {
+          "typeFullFqn" : "system.map",
+          "type" : "latest",
+          "sizeX" : 8.5,
+          "sizeY" : 6,
+          "config" : {
+            "datasources" : [ ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1742478746531,
+                  "endTimeMs" : 1742565146531
+                },
+                "quickInterval" : "CURRENT_DAY",
+                "hideInterval" : false,
+                "hideLastInterval" : false,
+                "hideFixedInterval" : false,
+                "hideQuickInterval" : false
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "rgb(255, 255, 255)",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "mapType" : "geoMap",
+              "layers" : [ {
+                "label" : "{i18n:widgets.maps.layer.roadmap}",
+                "provider" : "openstreet",
+                "layerType" : "OpenStreetMap.Mapnik",
+                "referenceLayer" : null
+              }, {
+                "label" : "{i18n:widgets.maps.layer.satellite}",
+                "provider" : "openstreet",
+                "layerType" : "Esri.WorldImagery"
+              }, {
+                "label" : "{i18n:widgets.maps.layer.hybrid}",
+                "provider" : "openstreet",
+                "layerType" : "Esri.WorldImagery",
+                "referenceLayer" : "openstreetmap_hybrid"
+              } ],
+              "imageSource" : null,
+              "markers" : [ {
+                "dsType" : "entity",
+                "dsLabel" : "",
+                "dsDeviceId" : null,
+                "dsEntityAliasId" : "80518e67-819b-32fd-6076-7a9d823396ce",
+                "dsFilterId" : null,
+                "additionalDataSources" : [ ],
+                "additionalDataKeys" : [ {
+                  "name" : "electra_id",
+                  "type" : "timeseries",
+                  "label" : "electra_id",
+                  "color" : "#2196f3",
+                  "settings" : { },
+                  "_hash" : 0.6490512433876793
+                }, {
+                  "name" : "active",
+                  "type" : "attribute",
+                  "label" : "active",
+                  "color" : "#2196f3",
+                  "settings" : { },
+                  "_hash" : 0.06255215599220876
+                } ],
+                "label" : {
+                  "show" : true,
+                  "type" : "function",
+                  "pattern" : "${entityName}",
+                  "patternFunction" : "var name = data['electra_id'];\r\nvar status = data['active'];\r\nvar color = '#435B63'; // Default: soft neutral gray\r\n\r\nif (status === 'true') {\r\n    color = '#4CAF50'; // muted steel blue\r\n}\r\n\r\nreturn '<div style=\"border-radius: 15px; border: solid #ffffff 2px; background-color: #fff; padding: 0; position: relative; bottom: 4px;\">' +\r\n         '<span style=\"border: solid ' + color + ' 2px; border-radius: 15px; color: ' + color + '; padding: 1px 6px; font-size: 14px; font-weight: 600; display: inline-block;\">' +\r\n           name +\r\n         '</span>' +\r\n       '</div>';\r\n   \r\n"
+                },
+                "tooltip" : {
+                  "show" : true,
+                  "trigger" : "click",
+                  "autoclose" : true,
+                  "type" : "pattern",
+                  "pattern" : "<b>${entityName} - ${entityLabel}</b>\n<br/><b>Status:</b> ${status}<br/><b>Speed:</b> ${speed:0} MPH<br/><b>Fuel level:</b> ${fuel:0} %<br/><br/><link-act name='bus-details'>Ver detalles</link-act>",
+                  "offsetX" : 0,
+                  "offsetY" : -1,
+                  "patternFunction" : null,
+                  "tagActions" : [ {
+                    "name" : "bus-details",
+                    "type" : "openDashboardState",
+                    "targetDashboardStateId" : "electric_generator",
+                    "setEntityId" : true,
+                    "stateEntityParamName" : null,
+                    "openRightLayout" : false,
+                    "openInSeparateDialog" : false,
+                    "openInPopover" : false
+                  } ]
+                },
+                "click" : {
+                  "type" : "doNothing"
+                },
+                "groups" : null,
+                "edit" : {
+                  "enabledActions" : [ "add", "move" ],
+                  "attributeScope" : "SHARED_SCOPE",
+                  "snappable" : false
+                },
+                "xKey" : {
+                  "name" : "latitude",
+                  "type" : "attribute",
+                  "label" : "latitude",
+                  "color" : "#2196f3",
+                  "settings" : { },
+                  "_hash" : 0.09644282312871366
+                },
+                "yKey" : {
+                  "name" : "longitude",
+                  "type" : "attribute",
+                  "label" : "longitude",
+                  "color" : "#2196f3",
+                  "settings" : { },
+                  "_hash" : 0.20542941821667415
+                },
+                "markerType" : "icon",
+                "markerShape" : {
+                  "shape" : "markerShape1",
+                  "size" : 34,
+                  "color" : {
+                    "type" : "constant",
+                    "color" : "#307FE5"
+                  }
+                },
+                "markerIcon" : {
+                  "iconContainer" : "iconContainer2",
+                  "icon" : "mdi:generator-portable",
+                  "size" : 48,
+                  "color" : {
+                    "type" : "function",
+                    "color" : "#307FE5",
+                    "rangeKey" : null,
+                    "range" : null,
+                    "colorFunction" : "var status = data['active'];\r\nvar color = '#435B63'; // Default: soft neutral gray\r\n\r\nif (status === 'true') {\r\n    color = '#4CAF50'; // muted steel blue\r\n}\r\n\r\nreturn color;"
+                  }
+                },
+                "markerImage" : {
+                  "type" : "image",
+                  "image" : "/assets/markers/shape1.svg",
+                  "imageSize" : 34
+                },
+                "markerOffsetX" : 0.5,
+                "markerOffsetY" : 1,
+                "markerClustering" : {
+                  "enable" : true,
+                  "zoomOnClick" : true,
+                  "maxZoom" : null,
+                  "maxClusterRadius" : 80,
+                  "zoomAnimation" : true,
+                  "showCoverageOnHover" : true,
+                  "spiderfyOnMaxZoom" : false,
+                  "chunkedLoad" : false,
+                  "lazyLoad" : true,
+                  "useClusterMarkerColorFunction" : false,
+                  "clusterMarkerColorFunction" : null
+                }
+              } ],
+              "polygons" : [ ],
+              "circles" : [ ],
+              "additionalDataSources" : [ ],
+              "controlsPosition" : "topleft",
+              "zoomActions" : [ "scroll", "doubleClick", "controlButtons" ],
+              "scales" : [ ],
+              "dragModeButton" : false,
+              "fitMapBounds" : true,
+              "useDefaultCenterPosition" : false,
+              "defaultCenterPosition" : "0,0",
+              "defaultZoomLevel" : null,
+              "mapPageSize" : 16384,
+              "mapActionButtons" : [ ],
+              "background" : {
+                "type" : "color",
+                "color" : "#FFFFFF01",
+                "overlay" : {
+                  "enabled" : false,
+                  "color" : "rgba(255,255,255,0.72)",
+                  "blur" : 3
+                },
+                "imageUrl" : null
+              },
+              "padding" : "8px"
+            },
+            "title" : "Ubicaciones",
+            "useDashboardTimewindow" : true,
+            "displayTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "dropShadow" : false,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "widgetCss" : ".mat-mdc-button > .mat-icon,\r\n.mat-mdc-unelevated-button > .mat-icon,\r\n.mat-mdc-raised-button > .mat-icon,\r\n.mat-mdc-outlined-button > .mat-icon {\r\n    height: 1.5rem !important;\r\n}",
+            "titleStyle" : {
+              "fontSize" : "24px",
+              "fontWeight" : 700,
+              "padding" : "5px 10px 5px 5px",
+              "height" : "30px"
+            },
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "configMode" : "advanced",
+            "titleFont" : null,
+            "titleColor" : null,
+            "margin" : "0px",
+            "borderRadius" : "0px",
+            "iconSize" : "24px",
+            "titleIcon" : "map",
+            "iconColor" : "#1F6BDD",
+            "actions" : {
+              "headerButton" : [ ]
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "b434651b-b845-5a45-cf12-f183016c4a94"
         }
       },
       "states" : {
@@ -613,29 +948,29 @@
           "layouts" : {
             "main" : {
               "widgets" : {
-                "6092e31e-a9b7-7a25-a026-dc7ccb105df4" : {
+                "6b57e3eb-117a-390c-778f-8c94049596b1" : {
                   "sizeX" : 12,
-                  "sizeY" : 7,
-                  "row" : 6,
+                  "sizeY" : 5,
+                  "row" : 1,
                   "col" : 0
                 },
-                "c55ab5f4-62ee-c8d0-7cd0-29df4556bfd5" : {
+                "3bf99aac-b4a9-4670-8250-f87e7fbec296" : {
+                  "sizeX" : 12,
+                  "sizeY" : 12,
+                  "row" : 1,
+                  "col" : 12
+                },
+                "d30fa361-463b-7634-674d-b34b66ec278d" : {
                   "sizeX" : 24,
                   "sizeY" : 1,
                   "resizable" : true,
                   "row" : 0,
                   "col" : 0
                 },
-                "6711863a-8014-2a26-7df8-9949e9530eec" : {
+                "89b9c70b-6f4d-a04e-c802-f9010d8e5253" : {
                   "sizeX" : 12,
-                  "sizeY" : 12,
-                  "row" : 1,
-                  "col" : 12
-                },
-                "cdc1b1ab-8634-bcf0-26ba-a2bc1e1744cc" : {
-                  "sizeX" : 12,
-                  "sizeY" : 5,
-                  "row" : 1,
+                  "sizeY" : 7,
+                  "row" : 6,
                   "col" : 0
                 }
               },
@@ -645,6 +980,38 @@
                 "columns" : 24,
                 "margin" : 10,
                 "outerMargin" : true,
+                "backgroundSizeMode" : "100%",
+                "minColumns" : 24,
+                "viewFormat" : "grid",
+                "autoFillHeight" : true,
+                "rowHeight" : 70,
+                "backgroundImageUrl" : null,
+                "mobileAutoFillHeight" : false,
+                "mobileRowHeight" : 70
+              }
+            }
+          }
+        },
+        "map" : {
+          "name" : "Editar Ubicación",
+          "root" : false,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "b434651b-b845-5a45-cf12-f183016c4a94" : {
+                  "sizeX" : 24,
+                  "sizeY" : 6,
+                  "resizable" : true,
+                  "row" : 0,
+                  "col" : 0
+                }
+              },
+              "gridSettings" : {
+                "layoutType" : "default",
+                "backgroundColor" : "#FFFFFF",
+                "columns" : 24,
+                "margin" : 10,
+                "outerMargin" : false,
                 "backgroundSizeMode" : "100%",
                 "minColumns" : 24,
                 "viewFormat" : "grid",
@@ -685,6 +1052,19 @@
             "resolveMultiple" : true,
             "entityType" : "DEVICE"
           }
+        },
+        "80518e67-819b-32fd-6076-7a9d823396ce" : {
+          "id" : "80518e67-819b-32fd-6076-7a9d823396ce",
+          "alias" : "Selected Entity",
+          "filter" : {
+            "type" : "stateEntity",
+            "resolveMultiple" : false,
+            "stateEntityParamName" : null,
+            "defaultStateEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "d2855350-90c7-11f0-94f7-e3430df9a4b8"
+            }
+          }
         }
       },
       "filters" : {
@@ -720,6 +1100,35 @@
         "e8ae092f-7398-6244-cfe4-37c73fc9dfd8" : {
           "id" : "e8ae092f-7398-6244-cfe4-37c73fc9dfd8",
           "filter" : "Solo Admin Tenants",
+          "keyFilters" : [ {
+            "key" : {
+              "type" : "ENTITY_FIELD",
+              "key" : "ownerName"
+            },
+            "valueType" : "STRING",
+            "predicates" : [ {
+              "keyFilterPredicate" : {
+                "operation" : "EQUAL",
+                "value" : {
+                  "defaultValue" : "Energía Peruana",
+                  "dynamicValue" : null
+                },
+                "ignoreCase" : true,
+                "type" : "STRING"
+              },
+              "userInfo" : {
+                "editable" : true,
+                "label" : "",
+                "autogeneratedLabel" : true,
+                "order" : 0
+              }
+            } ]
+          } ],
+          "editable" : true
+        },
+        "9bf4c442-93e8-db51-f5a6-2b514dcc3012" : {
+          "id" : "9bf4c442-93e8-db51-f5a6-2b514dcc3012",
+          "filter" : "Solo Admin Tenants1",
           "keyFilters" : [ {
             "key" : {
               "type" : "ENTITY_FIELD",

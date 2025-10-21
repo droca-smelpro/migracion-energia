@@ -32,7 +32,7 @@
       "id" : "d046a630-7f69-11f0-a61c-01e0c85fd5dd"
     },
     "label" : "AESA - ICA",
-    "name" : "GE02",
+    "name" : "GEP20",
     "softwareId" : null,
     "type" : "electric generator"
   },
@@ -86,10 +86,18 @@
     } ],
     "SHARED_SCOPE" : [ {
       "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "controller",
+      "lastUpdateTs" : 1759357802546,
+      "longValue" : null,
+      "strValue" : "EasyGen 3200"
+    }, {
+      "booleanValue" : null,
       "doubleValue" : -12.074657669646964,
       "jsonValue" : null,
       "key" : "latitude",
-      "lastUpdateTs" : 1756480705760,
+      "lastUpdateTs" : 1759357802546,
       "longValue" : null,
       "strValue" : null
     }, {
@@ -97,7 +105,7 @@
       "doubleValue" : -76.98148145312287,
       "jsonValue" : null,
       "key" : "longitude",
-      "lastUpdateTs" : 1756480705760,
+      "lastUpdateTs" : 1759357802546,
       "longValue" : null,
       "strValue" : null
     }, {
